@@ -14,3 +14,11 @@ body {
     overflow: hidden;
   }
 }
+
+@media (max-width: $desktop-width - 1px) {
+  .body {
+    &--menu {
+      overflow: hidden;
+    }
+  }
+}

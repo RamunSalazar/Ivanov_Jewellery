@@ -35,113 +35,76 @@
       <path d="M14 5C14 6.06087 13.5786 7.07828 12.8284 7.82843C12.0783 8.57857 11.0609 9 10 9C8.93913 9 7.92172 8.57857 7.17157 7.82843C6.42143 7.07828 6 6.06087 6 5M1 1H19V17H1V1Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
   </svg>
-  <header class="header header--main">
-    <div class="header__wrap header__wrap--desktop">
+  <header class="header header--catalog header--product-card">
+    <div class="header__wrap header__wrap--nojs header__wrap--open header__wrap--open--menu">
       <div class="header__logo-wrap">
         <div class="container">
-          <div class="header__search-wrap">
+          <div class="header__search-wrap header__search-wrap--desktop">
             <label for="search" aria-label="Type here to search"></label>
             <input id="search" type="search" placeholder="Type here to search">
           </div>
+          <button class="header__button-toggle" type="button" aria-label="Open mobile menu">
+            <svg width="25" height="18">
+              <use class="header__image header__image--close" xlink:href="#hamburger"></use>
+              <use class="header__image header__image--open" xlink:href="#hamburger-white"></use>
+            </svg>
+          </button>
           <a class="header__logo-link">
             <svg width="66" height="66">
-              <use xlink:href="#logo"></use>
+              <use class="header__image header__image--close" xlink:href="#logo"></use>
+              <use class="header__image header__image--open" xlink:href="#logo-white"></use>
             </svg>
           </a>
           <div class="header__links-wrap">
             <a href="#">Login</a>
             <a href="#">Cart<span>0</span></a>
           </div>
+          <a class="header__basket-link" href="#" aria-label="Go to basket">
+            <svg width="20" height="18">
+              <use class="header__image header__image--close" xlink:href="#basket"></use>
+              <use class="header__image header__image--open" xlink:href="#basket-white"></use>
+            </svg>
+          </a>
         </div>
       </div>
-      <nav class="header__nav">
-        <div class="container">
-          <ul>
+      <div class="header__mobile-menu header__mobile-menu--open">
+        <div class="header__search-wrap header__search-wrap--tablet">
+          <label for="search" aria-label="Type here to search"></label>
+          <input id="search" type="search">
+        </div>
+        <nav class="header__nav">
+          <div class="container">
+            <ul class="header__jewellery-list">
+              <li>
+                <a href="#">What’s new</a>
+              </li>
+              <li>
+                <a href="#">Chokers</a>
+              </li>
+              <li>
+                <a href="#">Necklaces</a>
+              </li>
+              <li>
+                <a href="#">Rings</a>
+              </li>
+              <li>
+                <a href="#">Earrings</a>
+              </li>
+            </ul>
+          </div>
+          <ul class="header__list">
             <li>
-              <a href="#">What’s new</a>
+              <a href="#">About CH</a>
             </li>
             <li>
-              <a href="#">Chokers</a>
+              <a href="#">Stores & Hours</a>
             </li>
             <li>
-              <a href="#">Necklaces</a>
-            </li>
-            <li>
-              <a href="#">Rings</a>
-            </li>
-            <li>
-              <a href="#">Earrings</a>
+              <a href="#">Contact Us</a>
             </li>
           </ul>
-        </div>
-      </nav>
-      <div class="header__main-wrap">
-        <div class="container">
-          <h1>PERFECTION<span>made to be yours</span></h1>
-        </div>
-      </div>
-    </div>
-    <div class="header__wrap header__wrap--tablet header__wrap--nojs header__wrap--open">
-      <div class="container">
-        <div class="header__menu-wrap">
-          <div class="header__logo-wrap">
-            <button class="header__button-toggle" type="button" aria-label="Open mobile menu">
-              <svg width="25" height="18">
-                <use class="header__image header__image--close" xlink:href="#hamburger"></use>
-                <use class="header__image header__image--open" xlink:href="#hamburger-white"></use>
-              </svg>
-            </button>
-            <a class="header__logo-link">
-              <svg width="66" height="66">
-                <use class="header__image header__image--close" xlink:href="#logo"></use>
-                <use class="header__image header__image--open" xlink:href="#logo-white"></use>
-              </svg>
-            </a>
-            <a href="#" aria-label="Go to basket">
-              <svg width="20" height="18">
-                <use class="header__image header__image--close" xlink:href="#basket"></use>
-                <use class="header__image header__image--open" xlink:href="#basket-white"></use>
-              </svg>
-            </a>
-          </div>
-          <div class="header__mobile-menu header__mobile-menu--open">
-            <div class="header__search-wrap">
-              <label for="search" aria-label="Type here to search"></label>
-              <input id="search" type="search">
-            </div>
-            <nav class="header__nav">
-              <ul class="header__jewellery-list">
-                <li>
-                  <a href="#">What’s new</a>
-                </li>
-                <li>
-                  <a href="#">Chokers</a>
-                </li>
-                <li>
-                  <a href="#">Necklaces</a>
-                </li>
-                <li>
-                  <a href="#">Rings</a>
-                </li>
-                <li>
-                  <a href="#">Earrings</a>
-                </li>
-              </ul>
-              <ul class="header__list">
-                <li>
-                  <a href="#">About CH</a>
-                </li>
-                <li>
-                  <a href="#">Stores & Hours</a>
-                </li>
-                <li>
-                  <a href="#">Contact Us</a>
-                </li>
-              </ul>
-              <a href="#">Login</a>
-            </nav>
-          </div>
-        </div>
+          <a class="header__login-link" href="#">Login</a>
+        </nav>
       </div>
       <div class="header__main-wrap">
         <div class="container">
