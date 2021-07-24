@@ -220,6 +220,7 @@
       right: 0;
       top: 0;
       bottom: 0;
+      z-index: 1;
 
       .container { 
         padding-top: 0;
@@ -231,7 +232,7 @@
         padding-left: 39px;
         padding-right: 44px;
         width: calc(100% - 83px);
-        height: auto;
+        height: 100%;
         position: absolute;
         z-index: 1;
         left: 0;
@@ -249,11 +250,11 @@
       }
 
       .header__logo-wrap {
-        z-index: 1;
         background-color: $brown;
         padding-bottom: 10px;
         padding-left: 39px;
         padding-right: 44px;
+        z-index: 1;
       }
     }
 

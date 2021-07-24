@@ -34,6 +34,9 @@
     <symbol id="basket-white" viewBox="0 0 20 18" fill="none">
       <path d="M14 5C14 6.06087 13.5786 7.07828 12.8284 7.82843C12.0783 8.57857 11.0609 9 10 9C8.93913 9 7.92172 8.57857 7.17157 7.82843C6.42143 7.07828 6 6.06087 6 5M1 1H19V17H1V1Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
+    <symbol id="arrow-white" viewBox="0 0 30 11" fill="none">
+      <path d="M0 5.5H29M29 5.5L23.5135 1M29 5.5L23.5135 10" stroke="white"/>
+    </symbol>
   </svg>
   <header class="header header--catalog header--product-card">
     <div class="header__wrap header__wrap--nojs header__wrap--open header__wrap--open--menu">
@@ -114,7 +117,80 @@
     </div>
   </header>
   <main></main>
-  <footer></footer>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrap">
+        <div class="footer__text-wrap">
+          <h2>The good stuff in your inbox</h2>
+          <span>News and updates from CH. No spam, we promise.</span>
+        </div>
+        <form method="post" action="https://echo.htmlacademy.ru">
+          <div class="footer__email-wrap">
+            <label for="footer-email" class="visually-hidden">Enter your email</label>
+            <input id="footer-email" type="email" placeholder="Your E-mail">
+          </div>
+          <button type="submit">
+            <span>Sign Up</span>
+            <svg width="30" height="31">
+              <use xlink:href="#arrow-white"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+      <div class="footer__links-wrap">
+        <ul class="footer__list">
+          <li>
+            <a href="#">Ordering & Payment</a>
+          </li>
+          <li>
+            <a href="#">Terms & Conditions</a>
+          </li>
+          <li>
+            <a href="#">Returns & Exchanges</a>
+          </li>
+          <li>
+            <a href="#">Delivery</a>
+          </li>
+        </ul>
+        <ul class="footer__common-list">
+          <li>
+            <a href="#">About CH</a>
+          </li>
+          <li>
+            <a href="#">Stores & Hours</a>
+          </li>
+          <li>
+            <a href="#">Jobs</a>
+          </li>
+          <li>
+            <a href="#">Contact Us</a>
+          </li>
+        </ul>
+        <ul class="footer__social-list">
+          <li class="footer__social-item footer__social-item--facebook">
+            <a href="#">
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li class="footer__social-item footer__social-item--instagram">
+            <a href="#">
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li class="footer__social-item footer__social-item--pinterest">
+            <a href="#">
+              <span>Pinterest</span>
+            </a>
+          </li>
+          <li class="footer__social-item footer__social-item--twitter">
+            <a href="#">
+              <span>Twitter</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
   <script src="js/main.js"></script>
 </body>
 </html>
