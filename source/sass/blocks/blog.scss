@@ -1,0 +1,337 @@
+.blog {
+  .container {
+    padding-top: 17px;
+    padding-bottom: 50px;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 30px;
+    grid-column-gap: 30px;
+  }
+
+  article {
+    width: 285px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.blog__text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+
+  h2 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 44px;
+    letter-spacing: 0.03em;
+    color: $standart-black;
+    margin-bottom: 19px;
+  }
+
+  a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: $standart-black;
+    padding-bottom: 4px;
+    border-bottom: 1px solid $brown;
+    width: max-content;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+}
+
+.blog__list-item {
+  display: flex;
+  width: 570px;
+
+  &--one {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    background: $special-grey url('../img/jess-harper-sunday.png') 0 0/285px 300px no-repeat;
+    justify-content: flex-end;
+  }
+
+  &--two {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    background: $special-grey url('../img/alex-holyoake.png') 285px 0/285px 300px no-repeat;
+  }
+
+  &--three {
+    grid-row: 1/-1;
+    grid-column: 2/3;
+    width: 570px;
+    height: 630px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background: $special-grey url('../img/alve-odonnell.png') 0 0/570px 630px no-repeat;
+
+    .blog__item-wrap {
+      padding-bottom: 105px;
+      background-color: $special-grey;
+    }
+  }
+}
+
+.blog__item-wrap {
+  width: 285px;
+  padding-top: 67px;
+  padding-bottom: 71px;
+
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $grey;
+    display: inline-block;
+    vertical-align: center;
+  }
+
+  h3 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 34px;
+    color: $black;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 163px;
+    margin-top: 13px;
+    margin-bottom: 37px;
+  }
+
+  a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: $standart-black;
+    padding-bottom: 4px;
+    border-bottom: 1px solid $brown;
+    width: max-content;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+
+  @media (min-resolution: 2dppx) {
+    .blog__list-item {
+      &--one {
+        background: $special-grey url('../img/jess-harper-sunday@2x.png') 0 0/285px 300px no-repeat;
+      }
+  
+      &--two {
+        background: $special-grey url('../img/alex-holyoake@2x.png') 285px 0/285px 300px no-repeat;
+      }
+  
+      &--three {
+        background: $special-grey url('../img/alve-odonnell@2x.png') 0 0/570px 630px no-repeat;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-width) and (max-width: $desktop-content-width - 1px) {
+  .blog {
+    ul {
+      grid-row-gap: 15px;
+      grid-column-gap: 15px;
+    }
+
+    article {
+      width: 245px;
+    }
+  }
+
+  .blog__item-wrap {
+    width: 245px;
+
+    h3 {
+      width: 140px;
+    }
+  }
+
+  .blog__list-item {
+    width: 490px;
+
+    &--one {
+      background: $special-grey url('../img/jess-harper-sunday.png') 0 0/245px 100% no-repeat;
+
+      .blog__item-wrap {
+        padding-top: 50px;
+        padding-bottom: 54px;
+      }
+    }
+
+    &--two {
+      background: $special-grey url('../img/alex-holyoake.png') 245px 0/245px 100% no-repeat;
+
+      .blog__item-wrap {
+        padding-top: 50px;
+        padding-bottom: 54px;
+      }
+    }
+
+    &--three {
+      height: 630px;
+      background: $special-grey url('../img/alve-odonnell.png') 0 0/490px 100% no-repeat;
+    }
+  }
+
+  @media (min-resolution: 2dppx) {
+    .blog__list-item {
+      &--one {
+        background: $special-grey url('../img/jess-harper-sunday@2x.png') 0 0/245px 100% no-repeat;
+      }
+  
+      &--two {
+        background: $special-grey url('../img/alex-holyoake@2x.png') 245px 0/245px 100% no-repeat;
+      }
+  
+      &--three {
+        background: $special-grey url('../img/alve-odonnell@2x.png') 0 0/490px 100% no-repeat;
+      }
+    }
+  }
+}
+
+@media (max-width: $desktop-width - 1px) {
+  .blog {
+    .container {
+      padding-bottom: 20px;
+    }
+
+    article {
+      width: 100%;
+    }
+    
+    ul {
+      display: flex;
+      flex-direction: column;
+      grid-row-gap: 50px;
+    }
+  }
+
+  .blog__item-wrap {
+    width: 50%;
+  }
+
+  .blog__list-item {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--one {
+      background: $special-grey url('../img/jess-harper-sunday-tablet.png') 0 0/339px 300px no-repeat;
+    }
+
+    &--two {
+      background: $special-grey url('../img/alex-holyoake-tablet.png') 100% 0/339px 300px no-repeat;
+    }
+
+    &--three {
+      width: 100%;
+      height: auto;
+      background: $special-grey url('../img/alve-odonnell-tablet.png') 0 0/339px 300px no-repeat;
+
+      .blog__item-wrap {
+        padding-top: 84px;
+        padding-bottom: 88px;
+      }
+    }
+  }
+
+  @media (min-resolution: 2dppx) {
+    .blog__list-item {
+      &--one {
+        background: $special-grey url('../img/jess-harper-sunday-tablet@2x.png') 0 0/339px 300px no-repeat;
+      }
+  
+      &--two {
+        background: $special-grey url('../img/alex-holyoake-tablet@2x.png') 100% 0/339px 300px no-repeat;
+      }
+  
+      &--three {
+        background: $special-grey url('../img/alve-odonnell-tablet@2x.png') 0 0/339px 300px no-repeat;
+      }
+    }
+  }
+}
+
+@media (max-width: $table-width - 1px) {
+  .blog {
+    .container {
+      padding-top: 7px;
+      padding-bottom: 10px;
+    }
+
+    ul {
+      grid-row-gap: 40px;
+    }
+  }
+
+  .blog__list-item {
+    padding-top: 256px;
+  }
+
+  .blog__item-wrap {
+    width: 100%;
+    padding-top: 45px;
+    padding-bottom: 49px;
+  }
+
+  .blog__text-wrap {
+    margin-bottom: 50px;
+  }
+
+  .blog__list-item {
+    &--one {
+      background: $special-grey url('../img/jess-harper-sunday-mobile.png') center 0/290px 256px no-repeat;
+    }
+
+    &--two {
+      background: $special-grey url('../img/alex-holyoake-mobile.png') center 0/290px 256px no-repeat;
+    }
+
+    &--three {
+      background: $special-grey url('../img/alve-odonnell-mobile.png') center 0/290px 256px no-repeat;
+
+      .blog__item-wrap {
+        padding-top: 62px;
+        padding-bottom: 66px;
+      }
+    }
+  }
+
+  @media (min-resolution: 2dppx) {
+    .blog__list-item {
+      &--one {
+        background: $special-grey url('../img/jess-harper-sunday-mobile@2x.png') 0 0/290px 256px no-repeat;
+      }
+  
+      &--two {
+        background: $special-grey url('../img/alex-holyoake-mobile@2x.png') 0 0/290px 256px no-repeat;
+      }
+  
+      &--three {
+        background: $special-grey url('../img/alve-odonnell-mobile@2x.png') 0 0/290px 256px no-repeat;
+      }
+    }
+  }
+}

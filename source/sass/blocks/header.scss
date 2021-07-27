@@ -117,7 +117,7 @@
 
   .container {
     width: 1366px;
-    background: url("../img/main-background.png") 0 0 no-repeat;
+    background: url("../img/main-background.png") 0 0/1366px 471px no-repeat;
     padding-top: 151px;
     padding-bottom: 145px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -194,26 +194,31 @@
 @media (min-resolution: 2dppx) {
   .header__main-wrap {
     .container {
-      background: url("../img/main-background@2x.png") 0 0/1366px 470px no-repeat;
+      background: url("../img/main-background@2x.png") 0 0/1366px 471px no-repeat;
+    }
+  }
+}
+
+@media (min-width: $desktop-content-width) and (max-width: 1387px) {
+  .header__main-wrap {
+    .container {
+      width: 1340px;
     }
   }
 }
 
 @media (min-width: $desktop-width) and (max-width: $desktop-content-width - 1px) {
-  .container {
-    width: 1000px;
-  }
-
   .header__main-wrap {
     .container {
-      width: 1024px;
+      width: 1000px;
+      background: url("../img/main-background.png") 0 0/1000px 470px no-repeat;
     }
   }
 
   @media (min-resolution: 2dppx) {
     .header__main-wrap {
       .container {
-        background: url("../img/main-background@2x.png") 0 0/1024px 470px no-repeat;
+        background: url("../img/main-background@2x.png") 0 0/1000px 470px no-repeat;
       }
     }
   }
@@ -274,6 +279,10 @@
     }
 
     &--nojs {
+      position: relative;
+      overflow: unset;
+      height: auto;
+
       .header__mobile-menu {
         height: auto;
         position: relative;
@@ -287,13 +296,20 @@
       .header__button-toggle {
         visibility: hidden;
       }
+
+      .header__logo-wrap {
+        padding-bottom: 15px;
+      }
     }
   }
 
   .header__logo-wrap {
+    padding-top: 42px;
+    padding-bottom: 14px;
+
     .container {
-      padding-top: 42px;
-      padding-bottom: 14px;
+      padding-top: 0;
+      padding-bottom: 0;
       display: flex;
       justify-content: space-between;
       align-items: top;
@@ -518,6 +534,11 @@
     .container {
       padding: 0;
     }
+  }
+
+  .header__logo-wrap {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   @media(min-resolution: 2dppx) {

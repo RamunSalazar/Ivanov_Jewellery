@@ -240,7 +240,7 @@ main {
   background: #a87b62; }
   .header__main-wrap .container {
     width: 1366px;
-    background: url("../img/main-background.png") 0 0 no-repeat;
+    background: url("../img/main-background.png") 0 0/1366px 471px no-repeat;
     padding-top: 151px;
     padding-bottom: 145px;
     -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -313,17 +313,20 @@ main {
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   .header__main-wrap .container {
-    background: url("../img/main-background@2x.png") 0 0/1366px 470px no-repeat; } }
+    background: url("../img/main-background@2x.png") 0 0/1366px 471px no-repeat; } }
+
+@media (min-width: 1366px) and (max-width: 1387px) {
+  .header__main-wrap .container {
+    width: 1340px; } }
 
 @media (min-width: 1024px) and (max-width: 1365px) {
-  .container {
-    width: 1000px; }
   .header__main-wrap .container {
-    width: 1024px; } }
+    width: 1000px;
+    background: url("../img/main-background.png") 0 0/1000px 470px no-repeat; } }
 
 @media (min-width: 1024px) and (max-width: 1365px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (max-width: 1365px) and (min-resolution: 2dppx) {
   .header__main-wrap .container {
-    background: url("../img/main-background@2x.png") 0 0/1024px 470px no-repeat; } }
+    background: url("../img/main-background@2x.png") 0 0/1000px 470px no-repeat; } }
 
 @media (max-width: 1023px) {
   .header__wrap .container {
@@ -362,28 +365,37 @@ main {
       padding-left: 39px;
       padding-right: 44px;
       z-index: 1; }
-  .header__wrap--nojs .header__mobile-menu {
-    height: auto;
+  .header__wrap--nojs {
     position: relative;
-    padding-bottom: 40px;
-    width: calc(100% - 83px);
-    left: 0;
-    padding-left: 39px;
-    padding-right: 44px; }
-  .header__wrap--nojs .header__button-toggle {
-    visibility: hidden; }
-  .header__logo-wrap .container {
+    overflow: unset;
+    height: auto; }
+    .header__wrap--nojs .header__mobile-menu {
+      height: auto;
+      position: relative;
+      padding-bottom: 40px;
+      width: calc(100% - 83px);
+      left: 0;
+      padding-left: 39px;
+      padding-right: 44px; }
+    .header__wrap--nojs .header__button-toggle {
+      visibility: hidden; }
+    .header__wrap--nojs .header__logo-wrap {
+      padding-bottom: 15px; }
+  .header__logo-wrap {
     padding-top: 42px;
-    padding-bottom: 14px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: top;
-        -ms-flex-align: top;
-            align-items: top; }
+    padding-bottom: 14px; }
+    .header__logo-wrap .container {
+      padding-top: 0;
+      padding-bottom: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: top;
+          -ms-flex-align: top;
+              align-items: top; }
   .header__logo-link {
     left: -6px; }
   .header__button-toggle {
@@ -517,7 +529,10 @@ main {
   .header__list {
     margin-bottom: 34px; }
   .header__nav .container {
-    padding: 0; } }
+    padding: 0; }
+  .header__logo-wrap {
+    padding-top: 0;
+    padding-bottom: 0; } }
 
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 767px) and (min-resolution: 2dppx) {
   .header__main-wrap .container {
@@ -717,8 +732,6 @@ main {
         width: 560px; }
     .footer__wrap input {
       width: 450px; }
-    .footer__wrap span {
-      margin-right: 0; }
   .footer__list {
     margin-right: 86px; }
   .footer__common-list {
@@ -757,36 +770,804 @@ main {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
-    .footer__social-list li {
-      margin-right: 42px; }
     .footer__social-list span {
       display: none; }
-  .footer__social-item a::before {
-    top: auto;
-    left: auto; }
-  .footer__social-item--facebook a:before {
-    width: 12px;
-    height: 21px;
-    left: auto;
-    background-size: 12px 21px; }
-  .footer__social-item--instagram a:before {
-    width: 20px;
-    height: 21px;
-    background-size: 20px 21px; }
-  .footer__social-item--pinterest a:before {
-    width: 20px;
-    height: 21px;
-    background-size: 20px 21px;
-    right: -29px; }
-  .footer__social-item--twitter a:before {
-    width: 20px;
-    height: 18px;
-    background-size: 20px 18px;
-    top: 3px;
-    right: -36px; }
+  .footer__social-item {
+    margin-right: 42px; }
+    .footer__social-item a::before {
+      top: auto;
+      left: auto; }
+    .footer__social-item--facebook a:before {
+      width: 12px;
+      height: 21px;
+      left: auto;
+      background-size: 12px 21px; }
+    .footer__social-item--instagram {
+      margin-right: 51px; }
+      .footer__social-item--instagram a:before {
+        width: 20px;
+        height: 21px;
+        background-size: 20px 21px; }
+    .footer__social-item--pinterest {
+      margin-right: 48px; }
+      .footer__social-item--pinterest a:before {
+        width: 20px;
+        height: 21px;
+        background-size: 20px 21px; }
+    .footer__social-item--twitter a:before {
+      width: 20px;
+      height: 18px;
+      background-size: 20px 18px;
+      top: 3px; }
   .footer__text-wrap {
     width: 82%; }
     .footer__text-wrap h2 {
       margin-bottom: 13px; }
   .footer__email-wrap {
     width: 60%; } }
+
+.slider-shop .container {
+  padding-top: 90px;
+  padding-bottom: 70px; }
+
+.slider-shop__button-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .slider-shop__button-wrap button {
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent;
+    position: relative;
+    top: -9px; }
+    .slider-shop__button-wrap button:hover, .slider-shop__button-wrap button:focus {
+      cursor: pointer;
+      opacity: 0.7; }
+
+.slider-shop__text-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 60px; }
+  .slider-shop__text-wrap h2 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 44px;
+    color: #1d1613;
+    margin-bottom: 24px; }
+  .slider-shop__text-wrap a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #1d1613;
+    padding-bottom: 0;
+    border-bottom: 1px solid #a87b62;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content; }
+    .slider-shop__text-wrap a:hover, .slider-shop__text-wrap a:focus {
+      cursor: pointer;
+      opacity: 0.7; }
+
+.slider-shop__jewellery-wrap {
+  overflow: hidden; }
+
+.slider-shop__jewellery-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 52px; }
+  .slider-shop__jewellery-list figure {
+    margin: 0; }
+  .slider-shop__jewellery-list img {
+    min-width: 270px; }
+  .slider-shop__jewellery-list li {
+    margin-right: 30px; }
+    .slider-shop__jewellery-list li:last-child {
+      margin-right: 0; }
+  .slider-shop__jewellery-list figcaption {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #1d1613;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 18px; }
+  .slider-shop__jewellery-list span {
+    display: inline-block;
+    vertical-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: #1d1613;
+    margin-top: 5px; }
+  .slider-shop__jewellery-list a:hover, .slider-shop__jewellery-list a:focus {
+    opacity: 0.7; }
+
+.slider-shop__pagination-item {
+  display: none; }
+
+.slider-shop__pagination-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  left: 6px; }
+  .slider-shop__pagination-list li {
+    margin-right: 12px; }
+    .slider-shop__pagination-list li:last-child {
+      margin-right: 0; }
+
+.slider-shop__link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #9b9997; }
+  .slider-shop__link:hover, .slider-shop__link:focus {
+    color: #1d1613; }
+  .slider-shop__link--active {
+    color: #1d1613; }
+
+.slider-shop__img-wrap--desktop-min {
+  display: none; }
+
+.slider-shop__pagination-text {
+  display: none; }
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .slider-shop .container {
+    width: 976px;
+    padding-left: 12px;
+    padding-right: 12px;
+    overflow-x: hidden; }
+  .slider-shop__jewellery-list img {
+    min-width: 235px; }
+  .slider-shop__jewellery-list li {
+    margin-right: 12px; } }
+
+@media (max-width: 1023px) {
+  .slider-shop .container {
+    padding-top: 41px;
+    padding-bottom: 20px; }
+  .slider-shop__button-wrap button {
+    top: -3px; }
+  .slider-shop__button-wrap svg {
+    width: 36px;
+    height: 15px; }
+  .slider-shop__text-wrap {
+    margin-bottom: 50px; }
+    .slider-shop__text-wrap h2 {
+      margin-bottom: 18px; }
+    .slider-shop__text-wrap a {
+      padding-bottom: 5px; }
+  .slider-shop__jewellery-list {
+    margin-bottom: 42px; }
+    .slider-shop__jewellery-list img {
+      min-width: 324px;
+      height: 340px; }
+  .slider-shop__jewellery-item:first-child figcaption {
+    position: relative;
+    left: 7px; }
+  .slider-shop__jewellery-item:first-child span {
+    position: relative;
+    left: -7px; }
+  .slider-shop__pagination-list {
+    left: 0; }
+  .slider-shop__pagination-item {
+    display: block; }
+  .slider-shop__jewellery-wrap {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 678px;
+    margin-left: auto;
+    margin-right: auto; } }
+
+@media (max-width: 767px) {
+  .slider-shop .container {
+    padding-top: 32px;
+    padding-bottom: 20px; }
+  .slider-shop__pagination-list {
+    display: none; }
+  .slider-shop__pagination-text {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #1d1613;
+    width: 100%;
+    text-align: center; }
+  .slider-shop__jewellery-list {
+    margin-bottom: 33px; }
+    .slider-shop__jewellery-list img {
+      min-width: 130px;
+      height: 136px; }
+  .slider-shop__button-wrap button {
+    visibility: hidden; }
+  .slider-shop__jewellery-wrap {
+    width: 290px; }
+  .slider-shop__text-wrap {
+    margin-bottom: 40px; }
+  .slider-shop__jewellery-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center; }
+    .slider-shop__jewellery-item figcaption {
+      padding-top: 12px; }
+    .slider-shop__jewellery-item:first-child figcaption {
+      left: 0; }
+    .slider-shop__jewellery-item:first-child span {
+      left: 0; } }
+
+.blog .container {
+  padding-top: 17px;
+  padding-bottom: 50px; }
+
+.blog ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 30px;
+  grid-column-gap: 30px; }
+
+.blog article {
+  width: 285px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.blog__text-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 60px; }
+  .blog__text-wrap h2 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 44px;
+    letter-spacing: 0.03em;
+    color: #1d1613;
+    margin-bottom: 19px; }
+  .blog__text-wrap a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #1d1613;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #a87b62;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content; }
+    .blog__text-wrap a:hover, .blog__text-wrap a:focus {
+      cursor: pointer;
+      opacity: 0.7; }
+
+.blog__list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 570px; }
+  .blog__list-item--one {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    background: #f0eae4 url("../img/jess-harper-sunday.png") 0 0/285px 300px no-repeat;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  .blog__list-item--two {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    background: #f0eae4 url("../img/alex-holyoake.png") 285px 0/285px 300px no-repeat; }
+  .blog__list-item--three {
+    grid-row: 1/-1;
+    grid-column: 2/3;
+    width: 570px;
+    height: 630px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    background: #f0eae4 url("../img/alve-odonnell.png") 0 0/570px 630px no-repeat; }
+    .blog__list-item--three .blog__item-wrap {
+      padding-bottom: 105px;
+      background-color: #f0eae4; }
+
+.blog__item-wrap {
+  width: 285px;
+  padding-top: 67px;
+  padding-bottom: 71px; }
+  .blog__item-wrap span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #9b9997;
+    display: inline-block;
+    vertical-align: center; }
+  .blog__item-wrap h3 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 34px;
+    color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 163px;
+    margin-top: 13px;
+    margin-bottom: 37px; }
+  .blog__item-wrap a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #1d1613;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #a87b62;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content; }
+    .blog__item-wrap a:hover, .blog__item-wrap a:focus {
+      cursor: pointer;
+      opacity: 0.7; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    .blog__item-wrap .blog__list-item--one {
+      background: #f0eae4 url("../img/jess-harper-sunday@2x.png") 0 0/285px 300px no-repeat; }
+    .blog__item-wrap .blog__list-item--two {
+      background: #f0eae4 url("../img/alex-holyoake@2x.png") 285px 0/285px 300px no-repeat; }
+    .blog__item-wrap .blog__list-item--three {
+      background: #f0eae4 url("../img/alve-odonnell@2x.png") 0 0/570px 630px no-repeat; } }
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .blog ul {
+    grid-row-gap: 15px;
+    grid-column-gap: 15px; }
+  .blog article {
+    width: 245px; }
+  .blog__item-wrap {
+    width: 245px; }
+    .blog__item-wrap h3 {
+      width: 140px; }
+  .blog__list-item {
+    width: 490px; }
+    .blog__list-item--one {
+      background: #f0eae4 url("../img/jess-harper-sunday.png") 0 0/245px 100% no-repeat; }
+      .blog__list-item--one .blog__item-wrap {
+        padding-top: 50px;
+        padding-bottom: 54px; }
+    .blog__list-item--two {
+      background: #f0eae4 url("../img/alex-holyoake.png") 245px 0/245px 100% no-repeat; }
+      .blog__list-item--two .blog__item-wrap {
+        padding-top: 50px;
+        padding-bottom: 54px; }
+    .blog__list-item--three {
+      height: 630px;
+      background: #f0eae4 url("../img/alve-odonnell.png") 0 0/490px 100% no-repeat; } }
+
+@media (min-width: 1024px) and (max-width: 1365px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (max-width: 1365px) and (min-resolution: 2dppx) {
+  .blog__list-item--one {
+    background: #f0eae4 url("../img/jess-harper-sunday@2x.png") 0 0/245px 100% no-repeat; }
+  .blog__list-item--two {
+    background: #f0eae4 url("../img/alex-holyoake@2x.png") 245px 0/245px 100% no-repeat; }
+  .blog__list-item--three {
+    background: #f0eae4 url("../img/alve-odonnell@2x.png") 0 0/490px 100% no-repeat; } }
+
+@media (max-width: 1023px) {
+  .blog .container {
+    padding-bottom: 20px; }
+  .blog article {
+    width: 100%; }
+  .blog ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    grid-row-gap: 50px; }
+  .blog__item-wrap {
+    width: 50%; }
+  .blog__list-item {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto; }
+    .blog__list-item--one {
+      background: #f0eae4 url("../img/jess-harper-sunday-tablet.png") 0 0/339px 300px no-repeat; }
+    .blog__list-item--two {
+      background: #f0eae4 url("../img/alex-holyoake-tablet.png") 100% 0/339px 300px no-repeat; }
+    .blog__list-item--three {
+      width: 100%;
+      height: auto;
+      background: #f0eae4 url("../img/alve-odonnell-tablet.png") 0 0/339px 300px no-repeat; }
+      .blog__list-item--three .blog__item-wrap {
+        padding-top: 84px;
+        padding-bottom: 88px; } }
+
+@media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1023px) and (min-resolution: 2dppx) {
+  .blog__list-item--one {
+    background: #f0eae4 url("../img/jess-harper-sunday-tablet@2x.png") 0 0/339px 300px no-repeat; }
+  .blog__list-item--two {
+    background: #f0eae4 url("../img/alex-holyoake-tablet@2x.png") 100% 0/339px 300px no-repeat; }
+  .blog__list-item--three {
+    background: #f0eae4 url("../img/alve-odonnell-tablet@2x.png") 0 0/339px 300px no-repeat; } }
+
+@media (max-width: 767px) {
+  .blog .container {
+    padding-top: 7px;
+    padding-bottom: 10px; }
+  .blog ul {
+    grid-row-gap: 40px; }
+  .blog__list-item {
+    padding-top: 256px; }
+  .blog__item-wrap {
+    width: 100%;
+    padding-top: 45px;
+    padding-bottom: 49px; }
+  .blog__text-wrap {
+    margin-bottom: 50px; }
+  .blog__list-item--one {
+    background: #f0eae4 url("../img/jess-harper-sunday-mobile.png") center 0/290px 256px no-repeat; }
+  .blog__list-item--two {
+    background: #f0eae4 url("../img/alex-holyoake-mobile.png") center 0/290px 256px no-repeat; }
+  .blog__list-item--three {
+    background: #f0eae4 url("../img/alve-odonnell-mobile.png") center 0/290px 256px no-repeat; }
+    .blog__list-item--three .blog__item-wrap {
+      padding-top: 62px;
+      padding-bottom: 66px; } }
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 767px) and (min-resolution: 2dppx) {
+  .blog__list-item--one {
+    background: #f0eae4 url("../img/jess-harper-sunday-mobile@2x.png") 0 0/290px 256px no-repeat; }
+  .blog__list-item--two {
+    background: #f0eae4 url("../img/alex-holyoake-mobile@2x.png") 0 0/290px 256px no-repeat; }
+  .blog__list-item--three {
+    background: #f0eae4 url("../img/alve-odonnell-mobile@2x.png") 0 0/290px 256px no-repeat; } }
+
+.faq .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 42px;
+  padding-bottom: 40px; }
+
+.faq h2 {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44px;
+  letter-spacing: 0.03em;
+  color: #1d1613;
+  margin-bottom: 48px; }
+
+.faq__list {
+  width: 970px; }
+  .faq__list span {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #1d1613;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 8px; }
+  .faq__list span > span {
+    margin-bottom: 0; }
+  .faq__list svg {
+    position: relative;
+    top: 7px; }
+  .faq__list p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #1d1613;
+    margin: 0;
+    margin-left: 5px;
+    width: 527px; }
+
+.faq__list-item {
+  border: 1px solid #a87b62;
+  border-bottom: none;
+  padding-top: 43px;
+  padding-left: 43px;
+  padding-right: 48px;
+  padding-bottom: 36px; }
+  .faq__list-item:hover {
+    cursor: pointer; }
+    .faq__list-item:hover span,
+    .faq__list-item:hover p {
+      opacity: 0.7; }
+  .faq__list-item:last-child {
+    border-bottom: 1px solid #a87b62; }
+  .faq__list-item p {
+    display: none; }
+  .faq__list-item--nojs {
+    padding-bottom: 36px; }
+    .faq__list-item--nojs p {
+      display: block; }
+    .faq__list-item--nojs svg {
+      -webkit-transform: none;
+              transform: none; }
+  .faq__list-item--open {
+    padding-bottom: 41px; }
+    .faq__list-item--open p {
+      display: block; }
+    .faq__list-item--open svg {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg); }
+
+@media (max-width: 1023px) {
+  .faq .container {
+    padding-top: 22px;
+    padding-bottom: 20px; }
+  .faq__list {
+    width: 100%; }
+    .faq__list svg {
+      width: 23px;
+      height: 14px;
+      top: 5px; }
+    .faq__list p {
+      margin-left: 0;
+      width: 528px; }
+    .faq__list span {
+      margin-bottom: 25px; }
+  .faq__list-item {
+    padding-left: 49px;
+    padding-right: 49px;
+    padding-bottom: 19px; }
+    .faq__list-item--nojs {
+      padding-bottom: 19px; }
+    .faq__list-item--open {
+      padding-bottom: 45px; } }
+
+@media (max-width: 767px) {
+  .faq .container {
+    padding-bottom: 10px; }
+  .faq h2 {
+    text-align: center;
+    margin-bottom: 27px; }
+  .faq span {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 14px; }
+  .faq span > span {
+    width: 210px;
+    margin-bottom: 0; }
+  .faq p {
+    font-size: 14px;
+    line-height: 20px; }
+  .faq__list p {
+    width: 207px; }
+  .faq__list svg {
+    min-width: 23px;
+    min-height: 14px; }
+  .faq__list-item {
+    padding-left: 23px;
+    padding-right: 23px;
+    padding-bottom: 6px;
+    padding-top: 17px; }
+    .faq__list-item--nojs {
+      padding-bottom: 6px; }
+    .faq__list-item--open {
+      padding-bottom: 19px; } }
+
+.jewellery-galery .container {
+  padding-top: 33px;
+  padding-bottom: 46px; }
+
+.jewellery-galery ul {
+  display: grid;
+  grid-template-columns: repeat(4, -webkit-max-content);
+  grid-template-columns: repeat(4, max-content);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 30px;
+  grid-column-gap: 27px; }
+
+.jewellery-galery img {
+  min-width: 230px; }
+
+.jewellery-galery .jewellery-galery__img--max-size {
+  min-width: 399px; }
+
+.jewellery-galery__text-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 60px; }
+  .jewellery-galery__text-wrap h2 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 44px;
+    letter-spacing: 0.03em;
+    color: #1d1613;
+    margin-bottom: 27px; }
+  .jewellery-galery__text-wrap span {
+    font-size: 42px;
+    line-height: 55px; }
+  .jewellery-galery__text-wrap a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #1d1613;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #a87b62;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content; }
+    .jewellery-galery__text-wrap a:hover, .jewellery-galery__text-wrap a:focus {
+      cursor: pointer;
+      opacity: 0.7; }
+
+.jewellery-galery__list-item--one {
+  grid-row: 1/2;
+  grid-column: 1/2; }
+
+.jewellery-galery__list-item--two {
+  grid-row: 2/3;
+  grid-column: 1/2; }
+
+.jewellery-galery__list-item--three {
+  grid-row: 1/-1;
+  grid-column: 2/3; }
+
+.jewellery-galery__list-item--four {
+  grid-row: 1/2;
+  grid-column: 3/4; }
+
+.jewellery-galery__list-item--five {
+  grid-row: 2/3;
+  grid-column: 3/4; }
+
+.jewellery-galery__list-item--six {
+  grid-row: 1/2;
+  grid-column: 4/5; }
+
+.jewellery-galery__list-item--seven {
+  grid-row: 2/3;
+  grid-column: 4/5; }
+
+.jewellery-galery__img-wrap--mobile {
+  display: none; }
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .jewellery-galery img {
+    min-width: 200px;
+    max-width: 200px; }
+  .jewellery-galery ul {
+    grid-column-gap: 12px; }
+  .jewellery-galery .jewellery-galery__img--max-size {
+    min-width: 360px;
+    max-width: 360px;
+    max-height: 366px; } }
+
+@media (max-width: 1023px) {
+  .jewellery-galery .container {
+    padding-top: 19px;
+    padding-bottom: 30px; }
+  .jewellery-galery img {
+    min-width: 133px;
+    max-width: 133px;
+    height: 133px; }
+  .jewellery-galery .jewellery-galery__img--min-height {
+    height: 87px; }
+  .jewellery-galery .jewellery-galery__img--max-size {
+    min-width: 231px;
+    max-width: 231px;
+    height: 240px; }
+  .jewellery-galery ul {
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    width: 678px;
+    margin-left: auto;
+    margin-right: auto; }
+  .jewellery-galery__text-wrap h2 {
+    margin-bottom: 15px; } }
+
+@media (max-width: 767px) {
+  .jewellery-galery .container {
+    padding-top: 12px;
+    padding-bottom: 71px; }
+  .jewellery-galery ul {
+    grid-template-columns: repeat(2, -webkit-max-content);
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: 133px 87px 87px;
+    grid-row-gap: 27px;
+    grid-column-gap: 24px;
+    width: 290px;
+    margin-left: auto;
+    margin-right: auto; }
+  .jewellery-galery img {
+    min-width: 133px;
+    max-width: 133px;
+    height: auto; }
+  .jewellery-galery .jewellery-galery__img--min-height {
+    height: auto; }
+  .jewellery-galery .jewellery-galery__img--max-size {
+    min-width: 133px;
+    max-width: 133px;
+    height: auto; }
+  .jewellery-galery__img-wrap--desktop {
+    display: none; }
+  .jewellery-galery__img-wrap--mobile {
+    display: block; }
+  .jewellery-galery__text-wrap {
+    margin-bottom: 46px; }
+    .jewellery-galery__text-wrap h2 {
+      margin-bottom: 17px; }
+  .jewellery-galery__list-item--three {
+    grid-row: 1/3;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content; }
+  .jewellery-galery__list-item--four {
+    display: none; }
+  .jewellery-galery__list-item--five {
+    grid-row: 3/4;
+    grid-column: 1/2; }
+  .jewellery-galery__list-item--six {
+    display: none; }
+  .jewellery-galery__list-item--seven {
+    grid-row: 3/4;
+    grid-column: 2/3; } }

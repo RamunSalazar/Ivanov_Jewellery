@@ -223,10 +223,6 @@
     input {
       width: 450px;
     }
-
-    span {
-      margin-right: 0;
-    }
   }
 
   .footer__list {
@@ -290,16 +286,14 @@
     display: flex;
     flex-wrap: wrap;
 
-    li {
-      margin-right: 42px;
-    }
-
     span {
       display: none;
     }
   }
 
   .footer__social-item {
+    margin-right: 42px;
+
     a {
       &::before {
         top: auto;
@@ -319,6 +313,8 @@
     }
   
     &--instagram {
+      margin-right: 51px;
+
       a {
         &:before {
           width: 20px;
@@ -329,12 +325,13 @@
     }
   
     &--pinterest {
+      margin-right: 48px;
+
       a {
         &:before {
           width: 20px;
           height: 21px;
           background-size: 20px 21px;
-          right: -29px;
         }
       }
     }
@@ -346,7 +343,6 @@
           height: 18px;
           background-size: 20px 18px;
           top: 3px;
-          right: -36px;
         }
       }
     }

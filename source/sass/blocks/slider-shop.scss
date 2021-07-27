@@ -1,0 +1,315 @@
+.slider-shop {
+  .container {
+    padding-top: 90px;
+    padding-bottom: 70px;
+  }
+}
+
+.slider-shop__button-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent;
+    position: relative;
+    top: -9px;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+}
+
+.slider-shop__text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+
+  h2 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 44px;
+    color: $standart-black;
+    margin-bottom: 24px;
+  }
+
+  a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: $standart-black;
+    padding-bottom: 0;
+    border-bottom: 1px solid $brown;
+    width: max-content;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+}
+
+.slider-shop__jewellery-wrap {
+  overflow: hidden;
+}
+
+.slider-shop__jewellery-list {
+  display: flex;
+  margin-bottom: 52px;
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    min-width: 270px;
+  }
+
+  li {
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  figcaption {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: $standart-black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 18px;
+  }
+
+  span {
+    display: inline-block;
+    vertical-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: $standart-black;
+    margin-top: 5px;
+  }
+
+  a {
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
+}
+
+.slider-shop__pagination-item {
+  display: none;
+}
+
+.slider-shop__pagination-list {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 6px;
+
+  li {
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.slider-shop__link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: $grey;
+
+  &:hover,
+  &:focus {
+    color: $standart-black;
+  }
+
+  &--active {
+    color: $standart-black;
+  }
+}
+
+.slider-shop__img-wrap {
+  &--desktop-min {
+    display: none;
+  }
+}
+
+.slider-shop__pagination-text {
+  display: none;
+}
+
+@media (min-width: $desktop-width) and (max-width: $desktop-content-width - 1px) {
+  .slider-shop {
+    .container {
+      width: 976px;
+      padding-left: 12px;
+      padding-right: 12px;
+      overflow-x: hidden;
+    }
+  }
+
+  .slider-shop__jewellery-list {
+    img {
+      min-width: 235px;
+    }
+
+    li {
+      margin-right: 12px;
+    }
+  }
+}
+
+@media (max-width: $desktop-width - 1px) {
+  .slider-shop {
+    .container {
+      padding-top: 41px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .slider-shop__button-wrap {
+    button {
+      top: -3px;
+    }
+
+    svg {
+      width: 36px;
+      height: 15px;
+    }
+  } 
+
+  .slider-shop__text-wrap {
+    margin-bottom: 50px;
+
+    h2 {
+      margin-bottom: 18px;
+    }
+
+    a {
+      padding-bottom: 5px;
+    }
+  }
+
+  .slider-shop__jewellery-list {
+    margin-bottom: 42px;
+
+    img {
+      min-width: 324px;
+      height: 340px;
+    }
+  }
+
+  .slider-shop__jewellery-item {
+    &:first-child {
+      figcaption {
+        position: relative;
+        left: 7px;
+      }
+
+      span {
+        position: relative;
+        left: -7px;
+      }
+    }
+  }
+
+  .slider-shop__pagination-list {
+    left: 0;
+  }
+
+  .slider-shop__pagination-item {
+    display: block;
+  }
+
+  .slider-shop__jewellery-wrap {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 678px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: $table-width - 1px) {
+  .slider-shop {
+    .container {
+      padding-top: 32px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .slider-shop__pagination-list {
+    display: none;
+  }
+
+  .slider-shop__pagination-text {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: $standart-black;
+    width: 100%;
+    text-align: center;
+  }
+
+  .slider-shop__jewellery-list {
+    margin-bottom: 33px;
+
+    img {
+      min-width: 130px;
+      height: 136px;
+    }
+  }
+
+  .slider-shop__button-wrap {
+    button {
+      visibility: hidden;
+    }
+  }
+
+  .slider-shop__jewellery-wrap {
+    width: 290px;
+  }
+
+  .slider-shop__text-wrap {
+    margin-bottom: 40px;
+  }
+
+  .slider-shop__jewellery-item {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    figcaption {
+      padding-top: 12px;
+    }
+
+    &:first-child {
+      figcaption {
+        left: 0;
+      }
+
+      span {
+        left: 0;
+      }
+    }
+  }
+}
