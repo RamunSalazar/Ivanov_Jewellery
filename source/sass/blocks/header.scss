@@ -83,6 +83,13 @@
 .header__logo-link {
   position: relative;
   top: -12px;
+
+  &--inner-page {
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
 }
 
 .header__nav {
@@ -108,6 +115,17 @@
     &:hover,
     &:focus {
       opacity: 0.7;
+    }
+  }
+
+  &--product-card {
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: $grey-light;
+      bottom: -18px;
     }
   }
 }
@@ -150,6 +168,30 @@
     position: relative;
     top: -6px;
     letter-spacing: 0.001em;
+  }
+
+  &--catalog {
+    .container {
+      background: url("../img/catalog-background.png") 0 0/1366px 261px no-repeat;
+      padding-top: 70px;
+      padding-bottom: 66px;
+    }
+
+    h1 {
+      font-size: 34px;
+      line-height: 44px;
+      letter-spacing: normal;
+    }
+
+    span {
+      font-size: 22px;
+      line-height: 29px;
+      margin-top: 6px;
+    }
+  }
+  
+  &--product-card {
+    display: none;
   }
 }
 
@@ -195,6 +237,12 @@
   .header__main-wrap {
     .container {
       background: url("../img/main-background@2x.png") 0 0/1366px 471px no-repeat;
+
+      &--catalog {
+        .container {
+          background: url("../img/catalog-background@2x.png") 0 0/1366px 261px no-repeat;
+        }
+      }
     }
   }
 }
@@ -211,14 +259,26 @@
   .header__main-wrap {
     .container {
       width: 1000px;
-      background: url("../img/main-background.png") 0 0/1000px 470px no-repeat;
+      background: url("../img/main-background.png") 0 0/1000px 471px no-repeat;
+    }
+
+    &--catalog {
+      .container {
+        background: url("../img/catalog-background.png") 0 0/1000px 261px no-repeat;
+      }
     }
   }
 
   @media (min-resolution: 2dppx) {
     .header__main-wrap {
       .container {
-        background: url("../img/main-background@2x.png") 0 0/1000px 470px no-repeat;
+        background: url("../img/main-background@2x.png") 0 0/1000px 471px no-repeat;
+      }
+
+      &--catalog {
+        .container {
+          background: url("../img/catalog-background@2x.png") 0 0/1000px 261px no-repeat;
+        }
       }
     }
   }
@@ -341,6 +401,18 @@
     h1 {
       left: -6px;
     }
+
+    &--catalog {
+      .container {
+        background: url("../img/catalog-background-tablet.png") 0 0/100% no-repeat;
+        padding-top: 70px;
+        padding-bottom: 66px;
+      }
+  
+      h1 {
+        left: 2px;
+      }
+    }
   }
 
   .header__mobile-menu {
@@ -405,6 +477,16 @@
       line-height: 23px;
       color: $white;
     }
+
+    &::before {
+      display: none;
+    }
+
+    &--product-card {
+      &::after {
+        display: none;
+      }
+    }
   }
 
   .header__jewellery-list {
@@ -452,6 +534,12 @@
     .header__main-wrap {
       .container {
         background: url("../img/main-background-tablet@2x.png") 0 0/100% no-repeat;
+      }
+
+      &--catalog {
+        .container {
+          background: url("../img/catalog-background-tablet@2x.png") 0 0/100% no-repeat;
+        }
       }
     }
   }
@@ -507,6 +595,25 @@
       font-size: 34px;
       line-height: 44px;
     }
+
+    &--catalog {
+      .container {
+        background: url("../img/catalog-background-mobile.png") 0 0/100% no-repeat;
+        padding-top: 58px;
+        padding-bottom: 55px;
+      }
+  
+      h1 {
+        font-size: 34px;
+        line-height: 44px;
+      }
+
+      span {
+        font-size: 22px;
+        line-height: 26px;
+        text-align: center;
+      }
+    }
   }
 
   .header__logo-link {
@@ -545,6 +652,12 @@
     .header__main-wrap {
       .container {
         background: url("../img/main-background-mobile@2x.png") 0 0/100% no-repeat;
+      }
+
+      &--catalog {
+        .container {
+          background: url("../img/catalog-background-mobile@2x.png") 0 0/100% no-repeat;
+        }
       }
     }
   }
