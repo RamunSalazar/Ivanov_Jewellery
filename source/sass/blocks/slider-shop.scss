@@ -3,6 +3,12 @@
     padding-top: 90px;
     padding-bottom: 70px;
   }
+
+  &--product-card {
+    .container {
+      padding-bottom: 125px;
+    }
+  }
 }
 
 .slider-shop__button-wrap {
@@ -22,6 +28,12 @@
     &:focus {
       cursor: pointer;
       opacity: 0.7;
+    }
+  }
+
+  &--product-card {
+    button {
+      top: -12px;
     }
   }
 }
@@ -54,6 +66,16 @@
     &:focus {
       cursor: pointer;
       opacity: 0.7;
+    }
+  }
+
+  &--product-card {
+    h2 {
+      margin-bottom: 16px;
+    }
+
+    a {
+      padding-bottom: 5px;
     }
   }
 }
@@ -183,6 +205,13 @@
       padding-top: 41px;
       padding-bottom: 20px;
     }
+
+    &--product-card {
+      .container {
+        padding-top: 39px;
+        padding-bottom: 75px;
+      }
+    }
   }
 
   .slider-shop__button-wrap {
@@ -254,6 +283,13 @@
       padding-top: 32px;
       padding-bottom: 20px;
     }
+
+    &--product-card {
+      .container {
+        padding-top: 22px;
+        padding-bottom: 65px;
+      }
+    }
   }
 
   .slider-shop__pagination-list {
@@ -283,6 +319,12 @@
     button {
       visibility: hidden;
     }
+
+    &--product-card {
+      button {
+        display: none;
+      }
+    }
   }
 
   .slider-shop__jewellery-wrap {
@@ -291,6 +333,8 @@
 
   .slider-shop__text-wrap {
     margin-bottom: 40px;
+    width: 100%;
+    text-align: center;
   }
 
   .slider-shop__jewellery-item {
