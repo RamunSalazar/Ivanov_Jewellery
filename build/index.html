@@ -47,6 +47,9 @@
       <symbol id="dawn-arrow" viewBox="0 0 17 10" fill="none">
         <path d="M1 1L8.5 9L16 1" stroke="#A87B62"></path>
       </symbol>
+      <symbol id="modal-close" viewBox="0 0 14 14" fill="none">
+        <path d="M7 5.44469L12.4447 0L14 1.55531L8.55531 7L14 12.4447L12.4447 14L7 8.55531L1.55531 14L0 12.4447L5.44469 7L0 1.55531L1.55531 0L7 5.44469Z" fill="currentColor"></path>
+      </symbol>
     </svg>
     <header class="header">
       <div class="header__wrap header__wrap--nojs header__wrap--open header__wrap--open--menu">
@@ -69,7 +72,7 @@
               </svg>
             </a>
             <div class="header__links-wrap">
-              <a href="#">Login</a>
+              <a class="header__login" href="login.html">Login</a>
               <a href="#">Cart<span>0</span></a>
             </div>
             <a class="header__basket-link" href="#" aria-label="Go to basket">
@@ -116,7 +119,7 @@
                 <a href="#">Contact Us</a>
               </li>
             </ul>
-            <a class="header__login-link" href="#">Login</a>
+            <a class="header__login-link header__login" href="login.html">Login</a>
           </nav>
         </div>
         <div class="header__main-wrap">
@@ -502,6 +505,31 @@
           </ul>
         </div>
       </section>
+      <div class="login__modal-wrap">
+        <div class="login__modal">
+          <h2>Log In</h2>
+          <form>
+            <div class="login__form-wrap">
+              <label for="login-email" class="visually-hidden" aria-label="Enter your email"></label>
+              <input class="login__email-imput" id="login-email" type="email" placeholder="Your E-mail" required="">
+            </div>
+            <div class="login__form-wrap">
+              <label for="login-password" class="visually-hidden" aria-label="Enter your password"></label>
+              <input id="login-password" type="password" placeholder="Password" required="">
+              <a href="">Forgot your password?</a>
+            </div>
+            <button class="login__button-login" type="submit">
+              <span>Log In</span>
+            </button>
+            <span>Don’t have an account?<a href="#">Sign up</a></span>
+          </form>
+          <button class="login__modal-close" type="button">
+            <svg width="14" height="14">
+              <use xlink:href="#modal-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
     </main>
     <footer class="footer">
       <div class="container">

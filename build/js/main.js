@@ -13,6 +13,13 @@ const catalogFilterLabelElement = document.querySelectorAll('.catalog__filter-la
 const calalogFilterOpenButtonElement = document.querySelector('.catalog__filter-open');
 const catalogFilterElement = document.querySelector('.catalog__filter');
 const catalogFilterCloseButtonElement = document.querySelector('.catalog__filter-close');
+const productCardButtonAddToCardElement = document.querySelector('.product__add-cart');
+const productCardButtonModalCloseElement = document.querySelector('.product__modal-close');
+const productCardModalWrapElement = document.querySelector('.product__modal-wrap');
+const loginModalWrapElement = document.querySelector('.login__modal-wrap');
+const loginButtonModalClose = document.querySelector('.login__modal-close');
+const loginEmailInputElement = document.querySelector('.login__email-imput');
+const loginButtonLoginSubmit = document.querySelector('.login__button-login');
 
 const DESKTOP_WINDOW_SIZE_MAX = 1366;
 const DESKTOP_WINDOW_SIZE_MIN = 1024;
@@ -26,6 +33,9 @@ let count = 0;
 let flag;
 let linkCount = 0;
 let sliderShopPaginationLinks = document.querySelectorAll('.slider-shop__link');
+let headerLoginElement = document.querySelector('.header__login');
+let headerLoginLinkElement = document.querySelector('.header__login-link');
+let storageEmail = '';
 
 if (headerWrapElement) {
   headerWrapElement.classList.remove('header__wrap--nojs');
@@ -242,4 +252,96 @@ if (calalogFilterOpenButtonElement && catalogFilterElement && catalogFilterClose
   catalogFilterCloseButtonElement.addEventListener('click', () => {
     catalogFilterElement.classList.remove('catalog__filter--open');
   })
+}
+
+if (productCardButtonAddToCardElement) {
+  productCardButtonAddToCardElement.addEventListener('click', () => {
+    bodyElement.classList.add('body--modal-open');
+    productCardModalWrapElement.classList.add('product__modal-wrap--open')
+  });
+}
+
+if (productCardButtonModalCloseElement) {
+  productCardButtonModalCloseElement.addEventListener('click', () => {
+    bodyElement.classList.remove('body--modal-open');
+    productCardModalWrapElement.classList.remove('product__modal-wrap--open')
+  });
+
+  window.addEventListener('keydown', (evt) => {
+    if (evt.keyCode === ESCAPE_KEY_CODE) {
+      bodyElement.classList.remove('body--modal-open');
+      productCardModalWrapElement.classList.remove('product__modal-wrap--open')
+    }
+  });
+
+  window.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('product__modal-wrap')) {
+      bodyElement.classList.remove('body--modal-open');
+      productCardModalWrapElement.classList.remove('product__modal-wrap--open')
+    }
+  });
+}
+
+try {
+  storageEmail = localStorage.getItem('email');
+} catch (err) {
+  /*  */
+}
+
+window.addEventListener('resize', () => {
+  headerLoginElement = document.querySelector('.header__login');
+  headerLoginLinkElement = document.querySelector('.header__login-link');
+});
+
+if (headerLoginElement) {
+  headerLoginElement.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    bodyElement.classList.add('body--modal-open');
+    loginModalWrapElement.classList.add('login__modal-wrap--open')
+    loginEmailInputElement.focus();
+    loginEmailInputElement.value = storageEmail;
+  });
+}
+
+if (headerLoginLinkElement) {
+  headerLoginLinkElement.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    bodyElement.classList.add('body--modal-open');
+    loginModalWrapElement.classList.add('login__modal-wrap--open')
+    headerWrapElement.classList.remove('header__wrap--open');
+    headerMobileMenuElement.classList.remove('header__mobile-menu--open')
+    loginEmailInputElement.focus();
+    loginEmailInputElement.value = storageEmail;
+  });
+}
+
+if (loginButtonModalClose) {
+  loginButtonModalClose.addEventListener('click', () => {
+    bodyElement.classList.remove('body--modal-open');
+    loginModalWrapElement.classList.remove('login__modal-wrap--open')
+  });
+
+  window.addEventListener('keydown', (evt) => {
+    if (evt.keyCode === ESCAPE_KEY_CODE) {
+      bodyElement.classList.remove('body--modal-open');
+    loginModalWrapElement.classList.remove('login__modal-wrap--open')
+    }
+  });
+
+  window.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('login__modal-wrap')) {
+      bodyElement.classList.remove('body--modal-open');
+      loginModalWrapElement.classList.remove('login__modal-wrap--open')
+    }
+  });
+}
+
+if (loginButtonLoginSubmit) {
+  loginButtonLoginSubmit.addEventListener('submit', (evt) => {
+    if (loginEmailInputElement.value !== '') {
+      localStorage.setItem('email', loginEmailInputElement.value);
+    } else {
+      evt.preventDefault();
+    }
+  }); 
 }

@@ -1,0 +1,240 @@
+.login__modal-wrap {
+  width: 100%;
+  height: 1000px;
+  position: absolute;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  &--open {
+    display: flex;
+  }
+
+  &--login {
+    position: relative;
+
+    .login__modal-close {
+      display: none;
+    }
+  }
+}
+
+.login__modal {
+  position: fixed;
+  top: 1px;
+  width: 340px;
+  background: $white url('../img/login-modal-background.png') 0 0/430px 138px no-repeat;
+  padding-left: 45px;
+  padding-right: 45px;
+  position: relative;
+  padding-top: 159px;
+  padding-bottom: 55px;
+
+  h2 {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 44px;
+    color: $standart-black;
+    text-align: center;
+    margin-bottom: 31px;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: $grey;
+    display: flex;
+    justify-content: center;
+  }
+
+  a {
+    margin-left: 8px;
+    color: $standart-black;
+
+    &:hover,
+    &:focus {
+      color: $grey;
+    }
+  }
+}
+
+.login__form-wrap {
+  margin-bottom: 42px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $standart-black;
+    bottom: -8px;
+  }
+
+  input {
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: $standart-black;
+    position: relative;
+    left: -2px;
+    width: 100%;
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: $grey;
+    }
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+
+      &::placeholder {
+        color: $standart-black;
+      }
+    }
+  }
+
+  &:last-of-type {
+    margin-bottom: 44px;
+
+    &::before {
+      bottom: 24px;
+    }
+
+    input {
+      margin-bottom: 14px;
+    }
+
+    a {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      color: $grey;
+      display: flex;
+      justify-content: flex-end;
+      margin-left: 0;
+
+      &:hover,
+      &:focus {
+        color: $standart-black;
+      }
+    }
+  }
+}
+
+.login__button-login {
+  width: 100%;
+  border: none;
+  background-color: $brown;
+  padding-top: 24px;
+  padding-bottom: 23px;
+  margin-bottom: 15px;
+
+  span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: $white;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    border: 1px solid $brown;
+    padding-top: 23px;
+    padding-bottom: 22px;
+    background-color: transparent;
+
+    span {
+      color: $standart-black;
+    }
+  }
+}
+
+.login__modal-close {
+  position: absolute;
+  top: 18px;
+  right: 14px;
+  border: none;
+  background-color: transparent;
+  color: $standart-black;
+  z-index: 2;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    color: $grey;
+  }
+}
+
+@media (min-resolution: 2dppx) {
+  .login__modal {
+    background: $white url('../img/login-modal-background@2x.png') 0 0/430px 138px no-repeat;
+  }
+}
+
+@media (max-width: $desktop-width - 1px) {
+  .login__modal {
+    width: 340px;
+    background: $white url('../img/login-modal-background.png') 0 0/440px 138px no-repeat;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .login__modal-close {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media (min-resolution: 2dppx) {
+    .login__modal {
+      background: $white url('../img/login-modal-background@2x.png') 0 0/440px 138px no-repeat;
+    }
+  }
+} 
+
+@media (max-width: $table-width - 1px) {
+  .login__modal {
+    width: 240px;
+    background: $white url('../img/login-modal-background.png') 0 0/270px 84px no-repeat;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 102px;
+    padding-bottom: 40px;
+    top: -20%;
+
+    h2 {
+      font-size: 24px;
+      line-height: 31px;
+      margin-bottom: 26px;
+    }
+  }
+
+  .login__modal-close {
+    top: 14px;
+    right: 10px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .login__form-wrap {
+    margin-bottom: 36px;
+
+    &:last-of-type {
+      margin-bottom: 35px;
+    }
+  }
+}
