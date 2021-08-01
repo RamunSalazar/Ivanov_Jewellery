@@ -9,7 +9,6 @@ const sliderShopButtonRightElement = document.querySelector('.slider-shop__butto
 const sliderShopJewelleryListElement = document.querySelector('.slider-shop__jewellery-list');
 const faqListItemElement = document.querySelectorAll('.faq__list-item');
 const catalogFilterWrapElement = document.querySelectorAll('.catalog__filter-wrap');
-const catalogFilterLabelElement = document.querySelectorAll('.catalog__filter-label');
 const calalogFilterOpenButtonElement = document.querySelector('.catalog__filter-open');
 const catalogFilterElement = document.querySelector('.catalog__filter');
 const catalogFilterCloseButtonElement = document.querySelector('.catalog__filter-close');
@@ -18,7 +17,7 @@ const productCardButtonModalCloseElement = document.querySelector('.product__mod
 const productCardModalWrapElement = document.querySelector('.product__modal-wrap');
 const loginModalWrapElement = document.querySelector('.login__modal-wrap');
 const loginButtonModalClose = document.querySelector('.login__modal-close');
-const loginEmailInputElement = document.querySelector('.login__email-imput');
+const loginEmailInputElement = document.querySelector('.login__email-input');
 const loginButtonLoginSubmit = document.querySelector('.login__button-login');
 
 const DESKTOP_WINDOW_SIZE_MAX = 1366;
@@ -74,11 +73,11 @@ if (headerButtonToggleElement) {
   headerButtonToggleElement.addEventListener('click', () => {
     if (headerWrapElement.classList.contains('header__wrap--open')) {
       headerWrapElement.classList.remove('header__wrap--open');
-      headerMobileMenuElement.classList.remove('header__mobile-menu--open')
+      headerMobileMenuElement.classList.remove('header__mobile-menu--open');
       bodyElement.classList.remove('body--menu');
     } else {
       headerWrapElement.classList.add('header__wrap--open');
-      headerMobileMenuElement.classList.add('header__mobile-menu--open')
+      headerMobileMenuElement.classList.add('header__mobile-menu--open');
       headerWrapElement.classList.add('header__wrap--menu');
       bodyElement.classList.add('body--menu');
     }
@@ -87,14 +86,14 @@ if (headerButtonToggleElement) {
 
 const linkCounter = () => {
   if (window.innerWidth >= DESKTOP_WINDOW_SIZE_MIN) {
-    sliderShopPaginationLinks = document.querySelectorAll('.slider-shop__link--desktop')
+    sliderShopPaginationLinks = document.querySelectorAll('.slider-shop__link--desktop');
     linkCount = sliderShopPaginationLinks.length;
   } else if (window.innerWidth < DESKTOP_WINDOW_SIZE_MIN) {
-    sliderShopPaginationLinks = document.querySelectorAll('.slider-shop__link--tablet')
+    sliderShopPaginationLinks = document.querySelectorAll('.slider-shop__link--tablet');
     linkCount = sliderShopPaginationLinks.length;
   }
   return linkCount;
-}
+};
 
 linkCount = linkCounter();
 
@@ -114,7 +113,7 @@ if (sliderShopButtonRightElement) {
       if (sliderShopPaginationLinks[i].classList.contains('slider-shop__link--active')) {
         sliderShopPaginationLinks[i].classList.remove('slider-shop__link--active');
         index = i;
-      } 
+      }
     }
     sliderShopPaginationLinks[++index].classList.add('slider-shop__link--active');
     flag = index;
@@ -143,7 +142,7 @@ if (sliderShopButtonLeftElement) {
       if (sliderShopPaginationLinks[i].classList.contains('slider-shop__link--active')) {
         sliderShopPaginationLinks[i].classList.remove('slider-shop__link--active');
         index = i;
-      } 
+      }
     }
     sliderShopPaginationLinks[--index].classList.add('slider-shop__link--active');
     flag = index;
@@ -163,7 +162,7 @@ if (sliderShopJewelleryListElement) {
     sliderShopJewelleryListElement.style.transform = 'translateX(' + count + 'px)';
     sliderShopButtonLeftElement.setAttribute('disabled', 'disabled');
     sliderShopButtonRightElement.removeAttribute('disabled');
-    for (let i = 0; i < linkCount; i++) { 
+    for (let i = 0; i < linkCount; i++) {
       if (sliderShopPaginationLinks[i].classList.contains('slider-shop__link--active')) {
         sliderShopPaginationLinks[i].classList.remove('slider-shop__link--active');
       }
@@ -171,33 +170,33 @@ if (sliderShopJewelleryListElement) {
     sliderShopPaginationLinks[0].classList.add('slider-shop__link--active');
   });
 
-  for (let i = 0; i < linkCount; i++) { 
+  for (let i = 0; i < linkCount; i++) {
     if (flag === 0) {
       sliderShopButtonLeftElement.setAttribute('disabled', 'disabled');
       sliderShopButtonRightElement.removeAttribute('disabled');
     } else if (flag === linkCount - 1) {
       sliderShopButtonRightElement.setAttribute('disabled', 'disabled');
       sliderShopButtonLeftElement.removeAttribute('disabled');
-    } 
+    }
     sliderShopPaginationLinks[i].addEventListener('click', (evt) => {
       evt.preventDefault();
       sliderShopButtonRightElement.removeAttribute('disabled');
       sliderShopButtonLeftElement.removeAttribute('disabled');
-      for (let i = 0; i < linkCount; i++) { 
-        if (sliderShopPaginationLinks[i].classList.contains('slider-shop__link--active')) {
-          sliderShopPaginationLinks[i].classList.remove('slider-shop__link--active');
+      for (let j = 0; j < linkCount; j++) {
+        if (sliderShopPaginationLinks[j].classList.contains('slider-shop__link--active')) {
+          sliderShopPaginationLinks[j].classList.remove('slider-shop__link--active');
         }
       }
       sliderShopPaginationLinks[i].classList.add('slider-shop__link--active');
       flag = i;
       if (window.innerWidth > DESKTOP_WINDOW_SIZE_MAX) {
-        count = parseInt(-DESKTOP_CONTAINER_WIDTH_MAX * i);
+        count = (-DESKTOP_CONTAINER_WIDTH_MAX * i);
         sliderShopJewelleryListElement.style.transform = 'translateX(' + count + 'px)';
       } else if (window.innerWidth < DESKTOP_WINDOW_SIZE_MAX && window.innerWidth >= DESKTOP_WINDOW_SIZE_MIN) {
-        count = parseInt(-DESKTOP_CONTAINER_WIDTH_MIN * i);
+        count = (-DESKTOP_CONTAINER_WIDTH_MIN * i);
         sliderShopJewelleryListElement.style.transform = 'translateX(' + count + 'px)';
       } else if (window.innerWidth < DESKTOP_WINDOW_SIZE_MIN && window.innerWidth >= TABLET_WINDOW_SIZE) {
-        count = parseInt(-TABLET_CONTAINER_WIDTH * i);
+        count = (-TABLET_CONTAINER_WIDTH * i);
         sliderShopJewelleryListElement.style.transform = 'translateX(' + count + 'px)';
       }
       if (flag === 0) {
@@ -206,7 +205,7 @@ if (sliderShopJewelleryListElement) {
       } else if (flag === linkCount - 1) {
         sliderShopButtonRightElement.setAttribute('disabled', 'disabled');
         sliderShopButtonLeftElement.removeAttribute('disabled');
-      } 
+      }
     });
   }
 }
@@ -221,7 +220,7 @@ if (faqListItemElement) {
           faqListItemElement[j].classList.remove('faq__list-item--open');
         }
         faqListItemElement[i].classList.add('faq__list-item--open');
-      };
+      }
     });
   }
 }
@@ -233,7 +232,7 @@ if (catalogFilterWrapElement) {
         catalogFilterWrapElement[i].classList.remove('catalog__filter-wrap--open');
       } else {
         catalogFilterWrapElement[i].classList.add('catalog__filter-wrap--open');
-      };
+      }
     });
   }
 }
@@ -241,7 +240,7 @@ if (catalogFilterWrapElement) {
 if (calalogFilterOpenButtonElement && catalogFilterElement && catalogFilterCloseButtonElement) {
   calalogFilterOpenButtonElement.addEventListener('click', () => {
     catalogFilterElement.classList.add('catalog__filter--open');
-  })
+  });
 
   window.addEventListener('keydown', (evt) => {
     if (evt.keyCode === ESCAPE_KEY_CODE) {
@@ -251,33 +250,33 @@ if (calalogFilterOpenButtonElement && catalogFilterElement && catalogFilterClose
 
   catalogFilterCloseButtonElement.addEventListener('click', () => {
     catalogFilterElement.classList.remove('catalog__filter--open');
-  })
+  });
 }
 
 if (productCardButtonAddToCardElement) {
   productCardButtonAddToCardElement.addEventListener('click', () => {
     bodyElement.classList.add('body--modal-open');
-    productCardModalWrapElement.classList.add('product__modal-wrap--open')
+    productCardModalWrapElement.classList.add('product__modal-wrap--open');
   });
 }
 
 if (productCardButtonModalCloseElement) {
   productCardButtonModalCloseElement.addEventListener('click', () => {
     bodyElement.classList.remove('body--modal-open');
-    productCardModalWrapElement.classList.remove('product__modal-wrap--open')
+    productCardModalWrapElement.classList.remove('product__modal-wrap--open');
   });
 
   window.addEventListener('keydown', (evt) => {
     if (evt.keyCode === ESCAPE_KEY_CODE) {
       bodyElement.classList.remove('body--modal-open');
-      productCardModalWrapElement.classList.remove('product__modal-wrap--open')
+      productCardModalWrapElement.classList.remove('product__modal-wrap--open');
     }
   });
 
   window.addEventListener('click', (evt) => {
     if (evt.target.classList.contains('product__modal-wrap')) {
       bodyElement.classList.remove('body--modal-open');
-      productCardModalWrapElement.classList.remove('product__modal-wrap--open')
+      productCardModalWrapElement.classList.remove('product__modal-wrap--open');
     }
   });
 }
@@ -297,7 +296,7 @@ if (headerLoginElement) {
   headerLoginElement.addEventListener('click', (evt) => {
     evt.preventDefault();
     bodyElement.classList.add('body--modal-open');
-    loginModalWrapElement.classList.add('login__modal-wrap--open')
+    loginModalWrapElement.classList.add('login__modal-wrap--open');
     loginEmailInputElement.focus();
     loginEmailInputElement.value = storageEmail;
   });
@@ -307,9 +306,9 @@ if (headerLoginLinkElement) {
   headerLoginLinkElement.addEventListener('click', (evt) => {
     evt.preventDefault();
     bodyElement.classList.add('body--modal-open');
-    loginModalWrapElement.classList.add('login__modal-wrap--open')
+    loginModalWrapElement.classList.add('login__modal-wrap--open');
     headerWrapElement.classList.remove('header__wrap--open');
-    headerMobileMenuElement.classList.remove('header__mobile-menu--open')
+    headerMobileMenuElement.classList.remove('header__mobile-menu--open');
     loginEmailInputElement.focus();
     loginEmailInputElement.value = storageEmail;
   });
@@ -318,20 +317,20 @@ if (headerLoginLinkElement) {
 if (loginButtonModalClose) {
   loginButtonModalClose.addEventListener('click', () => {
     bodyElement.classList.remove('body--modal-open');
-    loginModalWrapElement.classList.remove('login__modal-wrap--open')
+    loginModalWrapElement.classList.remove('login__modal-wrap--open');
   });
 
   window.addEventListener('keydown', (evt) => {
     if (evt.keyCode === ESCAPE_KEY_CODE) {
       bodyElement.classList.remove('body--modal-open');
-    loginModalWrapElement.classList.remove('login__modal-wrap--open')
+      loginModalWrapElement.classList.remove('login__modal-wrap--open');
     }
   });
 
   window.addEventListener('click', (evt) => {
     if (evt.target.classList.contains('login__modal-wrap')) {
       bodyElement.classList.remove('body--modal-open');
-      loginModalWrapElement.classList.remove('login__modal-wrap--open')
+      loginModalWrapElement.classList.remove('login__modal-wrap--open');
     }
   });
 }
@@ -343,5 +342,5 @@ if (loginButtonLoginSubmit) {
     } else {
       evt.preventDefault();
     }
-  }); 
+  });
 }

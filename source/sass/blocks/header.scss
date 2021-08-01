@@ -17,22 +17,13 @@
     font-size: 14px;
     line-height: 21px;
     margin-left: 14px;
-    
+
     &::placeholder {
       font-weight: 500;
       font-size: 14px;
       line-height: 21px;
       color: $grey;
       padding-left: 13px;
-    }
-
-    &:hover,
-    &:focus {
-      cursor: pointer;
-
-      &::placeholder {
-        color: $black;
-      }
     }
   }
 
@@ -51,6 +42,17 @@
 
     &:hover {
       cursor: pointer;
+    }
+  }
+}
+
+.header__search-input {
+  &:hover,
+  &:focus {
+    cursor: pointer;
+
+    &::placeholder {
+      color: $black;
     }
   }
 }
@@ -138,7 +140,7 @@
     background: url("../img/main-background.png") 0 0/1366px 471px no-repeat;
     padding-top: 151px;
     padding-bottom: 145px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   h1 {
@@ -167,7 +169,6 @@
     vertical-align: center;
     position: relative;
     top: -6px;
-    letter-spacing: 0.001em;
   }
 
   &--catalog {
@@ -189,7 +190,7 @@
       margin-top: 6px;
     }
   }
-  
+
   &--product-card {
     display: none;
   }
@@ -302,7 +303,7 @@
       bottom: 0;
       z-index: 1;
 
-      .container { 
+      .container {
         padding-top: 0;
         padding-left: 0;
         padding-right: 0;
@@ -408,7 +409,7 @@
         padding-top: 70px;
         padding-bottom: 66px;
       }
-  
+
       h1 {
         left: 2px;
       }
@@ -451,7 +452,7 @@
       position: relative;
       left: 6px;
     }
-  
+
     label {
       &::before {
         width: 16px;
@@ -503,7 +504,7 @@
     }
   }
 
-  .header__list { 
+  .header__list {
     display: block;
     margin-bottom: 44px;
 
@@ -514,7 +515,7 @@
     li {
       margin-bottom: 20px;
     }
-  } 
+  }
 
   .header__links-wrap {
     display: none;
@@ -525,12 +526,12 @@
     top: 12px;
     display: block;
   }
-  
+
   .header__login-link {
     display: block;
   }
 
-  @media(min-resolution: 2dppx) {
+  @media (min-resolution: 2dppx) {
     .header__main-wrap {
       .container {
         background: url("../img/main-background-tablet@2x.png") 0 0/100% no-repeat;
@@ -602,7 +603,7 @@
         padding-top: 58px;
         padding-bottom: 55px;
       }
-  
+
       h1 {
         font-size: 34px;
         line-height: 44px;
@@ -633,9 +634,9 @@
     margin-bottom: 10px;
   }
 
-  .header__list { 
+  .header__list {
     margin-bottom: 34px;
-  } 
+  }
 
   .header__nav {
     .container {
@@ -648,7 +649,7 @@
     padding-bottom: 0;
   }
 
-  @media(min-resolution: 2dppx) {
+  @media (min-resolution: 2dppx) {
     .header__main-wrap {
       .container {
         background: url("../img/main-background-mobile@2x.png") 0 0/100% no-repeat;

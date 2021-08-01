@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="">
+    <meta name="description" content="Our jewellerry is made of solid gold, silver or leather.  Also, some jewellery contains precious and semiprecious stones and crystals.">
     <title>HTML Academy: Jewellery</title>
     <link rel="preload stylesheet" href="css/normalize.css" as="style">
     <link rel="preload stylesheet" href="css/style.min.css" as="style">
@@ -14,6 +14,9 @@
     <link rel="preload" href="fonts/cormorant-garamond-v10-latin-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/cormorant-garamond-v10-latin-600.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/cormorant-garamond-v10-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="img/main-background.png" as="image">
+    <link rel="preload" href="img/main-background-tablet.png" as="image">
+    <link rel="preload" href="img/main-background-mobile.png" as="image">
   </head>
   <body>
     <svg style="display: none">
@@ -57,7 +60,7 @@
           <div class="container">
             <div class="header__search-wrap header__search-wrap--desktop">
               <label for="search" aria-label="Type here to search"></label>
-              <input id="search" type="search" placeholder="Type here to search">
+              <input class="header__search-input" id="search" type="search" placeholder="Type here to search">
             </div>
             <button class="header__button-toggle" type="button" aria-label="Open mobile menu">
               <svg width="25" height="18">
@@ -85,8 +88,8 @@
         </div>
         <div class="header__mobile-menu header__mobile-menu--open">
           <div class="header__search-wrap header__search-wrap--tablet">
-            <label for="search" aria-label="Type here to search"></label>
-            <input id="search" type="search">
+            <label for="search-mobile" aria-label="Type here to search"></label>
+            <input id="search-mobile" type="search">
           </div>
           <nav class="header__nav">
             <div class="container">
@@ -133,7 +136,7 @@
       <section class="slider-shop">
         <div class="container">
           <div class="slider-shop__button-wrap">
-            <button class="slider-shop__button-left" type="button">
+            <button class="slider-shop__button-left" type="button" aria-label="Scroll slider to left">
               <svg width="30" height="11">
                 <use xlink:href="#left-arrow"></use>
               </svg>
@@ -142,7 +145,7 @@
               <h2>New In</h2>
               <a href="catalog.html">Shop Now</a>
             </div>
-            <button class="slider-shop__button-right" type="button">
+            <button class="slider-shop__button-right" type="button" aria-label="Scroll slider to right">
               <svg width="30" height="11">
                 <use xlink:href="#right-arrow"></use>
               </svg>
@@ -157,7 +160,7 @@
                       <picture>
                         <source class="lazyload" type="image/webp" srcset="img/slider-purple-gemstone-necklace.webp 1x, img/slider-purple-gemstone-necklace@2x.webp 2x" data-srcset="img/slider-purple-gemstone-necklace.webp 1x, img/slider-purple-gemstone-necklace@2x.webp 2x">
                         <!-- 1х: 270px; 2x: 540px -->
-                        <img class="lazyload" src="img/slider-purple-gemstone-necklace.png 1x" srcset="img/slider-purple-gemstone-necklace@2x.png 2x" data-src="img/slider-purple-gemstone-necklace.png 1x" data-srcset="img/slider-purple-gemstone-necklace@2x.png 2x" width="270" height="285" alt="Necklace with amethyst">
+                        <img class="lazyload" src="img/slider-purple-gemstone-necklace.png" srcset="img/slider-purple-gemstone-necklace@2x.png 2x" data-src="img/slider-purple-gemstone-necklace.png" data-srcset="img/slider-purple-gemstone-necklace@2x.png 2x" width="270" height="285" alt="Necklace with amethyst">
                       </picture>
                     </div>
                     <figcaption>Necklace with amethyst<span>$ 145</span></figcaption>
@@ -171,7 +174,7 @@
                       <picture>
                         <source class="lazyload" type="image/webp" srcset="img/slider-layered-choker-necklace.webp 1x, img/slider-layered-choker-necklace@2x.webp 2x" data-srcset="img/slider-layered-choker-necklace.webp 1x, img/slider-layered-choker-necklace@2x.webp 2x">
                         <!-- 1х: 270px; 2x: 540px -->
-                        <img class="lazyload" src="img/slider-layered-choker-necklace.png 1x" srcset="img/slider-layered-choker-necklace@2x.png 2x" data-src="img/slider-layered-choker-necklace.png 1x" data-srcset="img/slider-layered-choker-necklace@2x.png 2x" width="270" height="285" alt="Layered сhoker">
+                        <img class="lazyload" src="img/slider-layered-choker-necklace.png" srcset="img/slider-layered-choker-necklace@2x.png 2x" data-src="img/slider-layered-choker-necklace.png" data-srcset="img/slider-layered-choker-necklace@2x.png 2x" width="270" height="285" alt="Layered сhoker">
                       </picture>
                     </div>
                     <figcaption>Layered сhoker<span>$ 115</span></figcaption>
@@ -185,7 +188,7 @@
                       <picture>
                         <source class="lazyload" type="image/webp" srcset="img/slider-dainty-gold-necklace.webp 1x, img/slider-dainty-gold-necklace@2x.webp 2x" data-srcset="img/slider-dainty-gold-necklace.webp 1x, img/slider-dainty-gold-necklace@2x.webp 2x">
                         <!-- 1х: 270px; 2x: 540px -->
-                        <img class="lazyload" src="img/slider-dainty-gold-necklace.png 1x" srcset="img/slider-dainty-gold-necklace@2x.png 2x" data-src="img/slider-dainty-gold-necklace.png 1x" data-srcset="img/slider-dainty-gold-necklace@2x.png 2x" width="270" height="285" alt="Gold chain">
+                        <img class="lazyload" src="img/slider-dainty-gold-necklace.png" srcset="img/slider-dainty-gold-necklace@2x.png 2x" data-src="img/slider-dainty-gold-necklace.png" data-srcset="img/slider-dainty-gold-necklace@2x.png 2x" width="270" height="285" alt="Gold chain">
                       </picture>
                     </div>
                     <figcaption>Gold chain<span>$ 215</span></figcaption>
@@ -199,7 +202,7 @@
                       <picture>
                         <source class="lazyload" type="image/webp" srcset="img/slider-galaxy-earrings.webp 1x, img/slider-galaxy-earrings@2x.webp 2x" data-srcset="img/slider-galaxy-earrings.webp 1x, img/slider-galaxy-earrings@2x.webp 2x">
                         <!-- 1х: 270px; 2x: 540px -->
-                        <img class="lazyload" src="img/slider-galaxy-earrings.png 1x" srcset="img/slider-galaxy-earrings@2x.png 2x" data-src="img/slider-galaxy-earrings.png 1x" data-srcset="img/slider-galaxy-earrings@2x.png 2x" width="270" height="285" alt="Galaxy earrings">
+                        <img class="lazyload" src="img/slider-galaxy-earrings.png" srcset="img/slider-galaxy-earrings@2x.png 2x" data-src="img/slider-galaxy-earrings.png" data-srcset="img/slider-galaxy-earrings@2x.png 2x" width="270" height="285" alt="Galaxy earrings">
                       </picture>
                     </div>
                     <figcaption>Galaxy earrings<span>$ 95</span></figcaption>
@@ -213,7 +216,7 @@
                       <picture>
                         <source class="lazyload" type="image/webp" srcset="img/slider-dainty-gold-necklace.webp 1x, img/slider-dainty-gold-necklace@2x.webp 2x" data-srcset="img/slider-dainty-gold-necklace.webp 1x, img/slider-dainty-gold-necklace@2x.webp 2x">
                         <!-- 1х: 270px; 2x: 540px -->
-                        <img class="lazyload" src="img/slider-dainty-gold-necklace.png 1x" srcset="img/slider-dainty-gold-necklace@2x.png 2x" data-src="img/slider-dainty-gold-necklace.png 1x" data-srcset="img/slider-dainty-gold-necklace@2x.png 2x" width="270" height="284" alt="Gold chain">
+                        <img class="lazyload" src="img/slider-dainty-gold-necklace.png" srcset="img/slider-dainty-gold-necklace@2x.png 2x" data-src="img/slider-dainty-gold-necklace.png" data-srcset="img/slider-dainty-gold-necklace@2x.png 2x" width="270" height="284" alt="Gold chain">
                       </picture>
                     </div>
                     <figcaption>Gold chain<span>$ 215</span></figcaption>
@@ -227,7 +230,7 @@
                       <picture>
                         <source class="lazyload" type="image/webp" srcset="img/slider-galaxy-earrings.webp 1x, img/slider-galaxy-earrings@2x.webp 2x" data-srcset="img/slider-galaxy-earrings.webp 1x, img/slider-galaxy-earrings@2x.webp 2x">
                         <!-- 1х: 270px; 2x: 540px -->
-                        <img class="lazyload" src="img/slider-galaxy-earrings.png 1x" srcset="img/slider-galaxy-earrings@2x.png 2x" data-src="img/slider-galaxy-earrings.png 1x" data-srcset="img/slider-galaxy-earrings@2x.png 2x" width="270" height="284" alt="Galaxy earrings">
+                        <img class="lazyload" src="img/slider-galaxy-earrings.png" srcset="img/slider-galaxy-earrings@2x.png 2x" data-src="img/slider-galaxy-earrings.png" data-srcset="img/slider-galaxy-earrings@2x.png 2x" width="270" height="284" alt="Galaxy earrings">
                       </picture>
                     </div>
                     <figcaption>Galaxy earrings<span>$ 95</span></figcaption>
@@ -241,7 +244,7 @@
                       <picture>
                         <source class="lazyload" type="image/webp" srcset="img/slider-purple-gemstone-necklace.webp 1x, img/slider-purple-gemstone-necklace@2x.webp 2x" data-srcset="img/slider-purple-gemstone-necklace.webp 1x, img/slider-purple-gemstone-necklace@2x.webp 2x">
                         <!-- 1х: 270px; 2x: 540px -->
-                        <img class="lazyload" src="img/slider-purple-gemstone-necklace.png 1x" srcset="img/slider-purple-gemstone-necklace@2x.png 2x" data-src="img/slider-purple-gemstone-necklace.png 1x" data-srcset="img/slider-purple-gemstone-necklace@2x.png 2x" width="270" height="284" alt="Necklace with amethyst">
+                        <img class="lazyload" src="img/slider-purple-gemstone-necklace.png" srcset="img/slider-purple-gemstone-necklace@2x.png 2x" data-src="img/slider-purple-gemstone-necklace.png" data-srcset="img/slider-purple-gemstone-necklace@2x.png 2x" width="270" height="284" alt="Necklace with amethyst">
                       </picture>
                     </div>
                     <figcaption>Necklace with amethyst<span>$ 145</span></figcaption>
@@ -255,7 +258,7 @@
                       <picture>
                         <source class="lazyload" type="image/webp" srcset="img/slider-layered-choker-necklace.webp 1x, img/slider-layered-choker-necklace@2x.webp 2x" data-srcset="img/slider-layered-choker-necklace.webp 1x, img/slider-layered-choker-necklace@2x.webp 2x">
                         <!-- 1х: 270px; 2x: 540px -->
-                        <img class="lazyload" src="img/slider-layered-choker-necklace.png 1x" srcset="img/slider-layered-choker-necklace@2x.png 2x" data-src="img/slider-layered-choker-necklace.png 1x" data-srcset="img/slider-layered-choker-necklace@2x.png 2x" width="270" height="284" alt="Layered сhoker">
+                        <img class="lazyload" src="img/slider-layered-choker-necklace.png" srcset="img/slider-layered-choker-necklace@2x.png 2x" data-src="img/slider-layered-choker-necklace.png" data-srcset="img/slider-layered-choker-necklace@2x.png 2x" width="270" height="284" alt="Layered сhoker">
                       </picture>
                     </div>
                     <figcaption>Layered сhoker<span>$ 115</span></figcaption>
@@ -269,7 +272,7 @@
                       <picture>
                         <source class="lazyload" type="image/webp" srcset="img/slider-layered-choker-necklace.webp 1x, img/slider-layered-choker-necklace@2x.webp 2x" data-srcset="img/slider-layered-choker-necklace.webp 1x, img/slider-layered-choker-necklace@2x.webp 2x">
                         <!-- 1х: 270px; 2x: 540px -->
-                        <img class="lazyload" src="img/slider-layered-choker-necklace.png 1x" srcset="img/slider-layered-choker-necklace@2x.png 2x" data-src="img/slider-layered-choker-necklace.png 1x" data-srcset="img/slider-layered-choker-necklace@2x.png 2x" width="270" height="284" alt="Layered сhoker">
+                        <img class="lazyload" src="img/slider-layered-choker-necklace.png" srcset="img/slider-layered-choker-necklace@2x.png 2x" data-src="img/slider-layered-choker-necklace.png" data-srcset="img/slider-layered-choker-necklace@2x.png 2x" width="270" height="284" alt="Layered сhoker">
                       </picture>
                     </div>
                     <figcaption>Layered сhoker<span>$ 115</span></figcaption>
@@ -283,7 +286,7 @@
                       <picture>
                         <source class="lazyload" type="image/webp" srcset="img/slider-dainty-gold-necklace.webp 1x, img/slider-dainty-gold-necklace@2x.webp 2x" data-srcset="img/slider-dainty-gold-necklace.webp 1x, img/slider-dainty-gold-necklace@2x.webp 2x">
                         <!-- 1х: 270px; 2x: 540px -->
-                        <img class="lazyload" src="img/slider-dainty-gold-necklace.png 1x" srcset="img/slider-dainty-gold-necklace@2x.png 2x" data-src="img/slider-dainty-gold-necklace.png 1x" data-srcset="img/slider-dainty-gold-necklace@2x.png 2x" width="270" height="284" alt="Gold chain">
+                        <img class="lazyload" src="img/slider-dainty-gold-necklace.png" srcset="img/slider-dainty-gold-necklace@2x.png 2x" data-src="img/slider-dainty-gold-necklace.png" data-srcset="img/slider-dainty-gold-necklace@2x.png 2x" width="270" height="284" alt="Gold chain">
                       </picture>
                     </div>
                     <figcaption>Gold chain<span>$ 215</span></figcaption>
@@ -297,7 +300,7 @@
                       <picture>
                         <source class="lazyload" type="image/webp" srcset="img/slider-purple-gemstone-necklace.webp 1x, img/slider-purple-gemstone-necklace@2x.webp 2x" data-srcset="img/slider-purple-gemstone-necklace.webp 1x, img/slider-purple-gemstone-necklace@2x.webp 2x">
                         <!-- 1х: 270px; 2x: 540px -->
-                        <img class="lazyload" src="img/slider-purple-gemstone-necklace.png 1x" srcset="img/slider-purple-gemstone-necklace@2x.png 2x" data-src="img/slider-purple-gemstone-necklace.png 1x" data-srcset="img/slider-purple-gemstone-necklace@2x.png 2x" width="270" height="284" alt="Necklace with amethyst">
+                        <img class="lazyload" src="img/slider-purple-gemstone-necklace.png" srcset="img/slider-purple-gemstone-necklace@2x.png 2x" data-src="img/slider-purple-gemstone-necklace.png" data-srcset="img/slider-purple-gemstone-necklace@2x.png 2x" width="270" height="284" alt="Necklace with amethyst">
                       </picture>
                     </div>
                     <figcaption>Necklace with amethyst<span>$ 145</span></figcaption>
@@ -311,7 +314,7 @@
                       <picture>
                         <source class="lazyload" type="image/webp" srcset="img/slider-galaxy-earrings.webp 1x, img/slider-galaxy-earrings@2x.webp 2x" data-srcset="img/slider-galaxy-earrings.webp 1x, img/slider-galaxy-earrings@2x.webp 2x">
                         <!-- 1х: 270px; 2x: 540px -->
-                        <img class="lazyload" src="img/slider-galaxy-earrings.png 1x" srcset="img/slider-galaxy-earrings@2x.png 2x" data-src="img/slider-galaxy-earrings.png 1x" data-srcset="img/slider-galaxy-earrings@2x.png 2x" width="270" height="284" alt="Galaxy earrings">
+                        <img class="lazyload" src="img/slider-galaxy-earrings.png" srcset="img/slider-galaxy-earrings@2x.png 2x" data-src="img/slider-galaxy-earrings.png" data-srcset="img/slider-galaxy-earrings@2x.png 2x" width="270" height="284" alt="Galaxy earrings">
                       </picture>
                     </div>
                     <figcaption>Galaxy earrings<span>$ 95</span></figcaption>
@@ -437,7 +440,7 @@
                 <picture>
                   <source class="lazyload" type="image/webp" srcset="img/8.webp 1x, img/8@2x.webp 2x" data-srcset="img/8.webp 1x, img/8@2x.webp 2x">
                   <!-- 1x: 230px; 2x: 460px -->
-                  <img class="lazyload" src="img/8.png 1x" srcset="img/8@2x.png 2x" data-src="img/8.png 1x" data-srcset="img/8@2x.png 2x" width="230" height="230" alt="Square earrings">
+                  <img class="lazyload" src="img/8.png" srcset="img/8@2x.png 2x" data-src="img/8.png" data-srcset="img/8@2x.png 2x" width="230" height="230" alt="Square earrings">
                 </picture>
               </div>
             </li>
@@ -446,7 +449,7 @@
                 <picture>
                   <source class="lazyload" type="image/webp" srcset="img/1.webp 1x, img/1@2x.webp 2x" data-srcset="img/1.webp 1x, img/1@2x.webp 2x">
                   <!-- 1x: 230px; 2x: 460px -->
-                  <img class="lazyload jewellery-galery__img jewellery-galery__img--min-height" src="img/1.png 1x" srcset="img/1@2x.png 2x" data-src="img/1.png 1x" data-srcset="img/1@2x.png 2x" width="230" height="150" alt="Necklaces">
+                  <img class="lazyload jewellery-galery__img jewellery-galery__img--min-height" src="img/1.png" srcset="img/1@2x.png 2x" data-src="img/1.png" data-srcset="img/1@2x.png 2x" width="230" height="150" alt="Necklaces">
                 </picture>
               </div>
             </li>
@@ -455,14 +458,14 @@
                 <picture>
                   <source class="lazyload" type="image/webp" srcset="img/2.webp 1x, img/2@2x.webp 2x" data-srcset="img/2.webp 1x, img/2@2x.webp 2x">
                   <!-- 1x: 399px; 2x: 798px -->
-                  <img class="lazyload jewellery-galery__img jewellery-galery__img--max-size" src="img/2.png 1x" srcset="img/2@2x.png 2x" data-src="img/2.png 1x" data-srcset="img/2@2x.png 2x" width="399" height="412" alt="Woman with earrings">
+                  <img class="lazyload jewellery-galery__img jewellery-galery__img--max-size" src="img/2.png" srcset="img/2@2x.png 2x" data-src="img/2.png" data-srcset="img/2@2x.png 2x" width="399" height="412" alt="Woman with earrings">
                 </picture>
               </div>
               <div class="jewellery-galery__img-wrap jewellery-galery__img-wrap--mobile">
                 <picture>
                   <source class="lazyload" type="image/webp" srcset="img/10.webp 1x, img/10@2x.webp 2x" data-srcset="img/10.webp 1x, img/10@2x.webp 2x">
                   <!-- 1x: 122px; 2x: 266px -->
-                  <img class="lazyload jewellery-galery__img jewellery-galery__img--max-size" src="img/10.png 1x" srcset="img/10@2x.png 2x" data-src="img/10.png 1x" data-srcset="img/10@2x.png 2x" width="133" height="247" alt="Woman with earrings">
+                  <img class="lazyload jewellery-galery__img jewellery-galery__img--max-size" src="img/10.png" srcset="img/10@2x.png 2x" data-src="img/10.png" data-srcset="img/10@2x.png 2x" width="133" height="247" alt="Woman with earrings">
                 </picture>
               </div>
             </li>
@@ -471,7 +474,7 @@
                 <picture>
                   <source class="lazyload" type="image/webp" srcset="img/4.webp 1x, img/4@2x.webp 2x" data-srcset="img/4.webp 1x, img/4@2x.webp 2x">
                   <!-- 1x: 230px; 2x: 460px -->
-                  <img class="lazyload" src="img/4.png 1x" srcset="img/4@2x.png 2x" data-src="img/4.png 1x" data-srcset="img/4@2x.png 2x" width="230" height="230" alt="Hand with jewelry">
+                  <img class="lazyload" src="img/4.png" srcset="img/4@2x.png 2x" data-src="img/4.png" data-srcset="img/4@2x.png 2x" width="230" height="230" alt="Hand with jewelry">
                 </picture>
               </div>
             </li>
@@ -480,7 +483,7 @@
                 <picture>
                   <source class="lazyload" type="image/webp" srcset="img/5.webp 1x, img/5@2x.webp 2x" data-srcset="img/5.webp 1x, img/5@2x.webp 2x">
                   <!-- 1x: 230px; 2x: 460px -->
-                  <img class="lazyload jewellery-galery__img jewellery-galery__img--min-height" src="img/5.png 1x" srcset="img/5@2x.png 2x" data-src="img/5.png 1x" data-srcset="img/5@2x.png 2x" width="230" height="150" alt="Amber jewetly">
+                  <img class="lazyload jewellery-galery__img jewellery-galery__img--min-height" src="img/5.png" srcset="img/5@2x.png 2x" data-src="img/5.png" data-srcset="img/5@2x.png 2x" width="230" height="150" alt="Amber jewetly">
                 </picture>
               </div>
             </li>
@@ -489,7 +492,7 @@
                 <picture>
                   <source class="lazyload" type="image/webp" srcset="img/6.webp 1x, img/6@2x.webp 2x" data-srcset="img/6.webp 1x, img/6@2x.webp 2x">
                   <!-- 1x: 230px; 2x: 460px -->
-                  <img class="lazyload" src="img/6.png 1x" srcset="img/6@2x.png 2x" data-src="img/6.png 1x" data-srcset="img/6@2x.png 2x" width="230" height="230" alt="Circle earrings">
+                  <img class="lazyload" src="img/6.png" srcset="img/6@2x.png 2x" data-src="img/6.png" data-srcset="img/6@2x.png 2x" width="230" height="230" alt="Circle earrings">
                 </picture>
               </div>
             </li>
@@ -498,38 +501,40 @@
                 <picture>
                   <source class="lazyload" type="image/webp" srcset="img/7.webp 1x, img/7@2x.webp 2x" data-srcset="img/7.webp 1x, img/7@2x.webp 2x">
                   <!-- 1x: 230px; 2x: 460px -->
-                  <img class="lazyload jewellery-galery__img jewellery-galery__img--min-height" src="img/7.png 1x" srcset="img/7@2x.png 2x" data-src="img/7.png 1x" data-srcset="img/7@2x.png 2x" width="230" height="150" alt="Hands with jewelry">
+                  <img class="lazyload jewellery-galery__img jewellery-galery__img--min-height" src="img/7.png" srcset="img/7@2x.png 2x" data-src="img/7.png" data-srcset="img/7@2x.png 2x" width="230" height="150" alt="Hands with jewelry">
                 </picture>
               </div>
             </li>
           </ul>
         </div>
       </section>
-      <div class="login__modal-wrap">
-        <div class="login__modal">
-          <h2>Log In</h2>
-          <form>
-            <div class="login__form-wrap">
-              <label for="login-email" class="visually-hidden" aria-label="Enter your email"></label>
-              <input class="login__email-imput" id="login-email" type="email" placeholder="Your E-mail" required="">
-            </div>
-            <div class="login__form-wrap">
-              <label for="login-password" class="visually-hidden" aria-label="Enter your password"></label>
-              <input id="login-password" type="password" placeholder="Password" required="">
-              <a href="">Forgot your password?</a>
-            </div>
-            <button class="login__button-login" type="submit">
-              <span>Log In</span>
+      <section class="login">
+        <div class="login__modal-wrap">
+          <div class="login__modal">
+            <h2>Log In</h2>
+            <form>
+              <div class="login__form-wrap">
+                <label for="login-email" class="visually-hidden" aria-label="Enter your email"></label>
+                <input class="login__email-input login__input" id="login-email" type="email" placeholder="Your E-mail" required="">
+              </div>
+              <div class="login__form-wrap">
+                <label for="login-password" class="visually-hidden" aria-label="Enter your password"></label>
+                <input class="login__password-input login__input" id="login-password" type="password" placeholder="Password" required="">
+                <a class="login__link" href="#">Forgot your password?</a>
+              </div>
+              <button class="login__button-login" type="submit">
+                <span>Log In</span>
+              </button>
+              <span>Don’t have an account?<a class="login__link-signup" href="#">Sign up</a></span>
+            </form>
+            <button class="login__modal-close" type="button">
+              <svg width="14" height="14">
+                <use xlink:href="#modal-close"></use>
+              </svg>
             </button>
-            <span>Don’t have an account?<a href="#">Sign up</a></span>
-          </form>
-          <button class="login__modal-close" type="button">
-            <svg width="14" height="14">
-              <use xlink:href="#modal-close"></use>
-            </svg>
-          </button>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="container">
@@ -541,7 +546,7 @@
           <form method="post" action="https://echo.htmlacademy.ru">
             <div class="footer__email-wrap">
               <label for="footer-email" class="visually-hidden">Enter your email</label>
-              <input id="footer-email" type="email" placeholder="Your E-mail">
+              <input class="footer__email-input" id="footer-email" type="email" placeholder="Your E-mail">
             </div>
             <button type="submit">
               <span>Sign Up</span>
@@ -581,22 +586,22 @@
             </li>
           </ul>
           <ul class="footer__social-list">
-            <li class="footer__social-item footer__social-item--facebook">
+            <li class="footer__social-item footer__social-facebook">
               <a href="#">
                 <span>Facebook</span>
               </a>
             </li>
-            <li class="footer__social-item footer__social-item--instagram">
+            <li class="footer__social-item footer__social-instagram">
               <a href="#">
                 <span>Instagram</span>
               </a>
             </li>
-            <li class="footer__social-item footer__social-item--pinterest">
+            <li class="footer__social-item footer__social-pinterest">
               <a href="#">
                 <span>Pinterest</span>
               </a>
             </li>
-            <li class="footer__social-item footer__social-item--twitter">
+            <li class="footer__social-item footer__social-twitter">
               <a href="#">
                 <span>Twitter</span>
               </a>

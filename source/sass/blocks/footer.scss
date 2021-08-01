@@ -18,7 +18,7 @@
     font-weight: bold;
     font-size: 34px;
     line-height: 44px;
-    letter-spacing: 0.022em;
+    letter-spacing: 0.02em;
     color: $white;
     margin-top: 0;
     margin-bottom: 10px;
@@ -36,6 +36,7 @@
 
 .footer__links-wrap {
   display: flex;
+  padding-top: 6px;
 
   a {
     color: $white;
@@ -47,6 +48,10 @@
     &:focus {
       opacity: 0.7;
     }
+  }
+
+  li {
+    margin-bottom: 21px;
   }
 }
 
@@ -82,15 +87,6 @@
       line-height: 21px;
       color: $grey;
     }
-
-    &:hover,
-    &:focus {
-      cursor: pointer;
-
-      &::placeholder {
-        color: $white;
-      }
-    }
   }
 
   button {
@@ -114,11 +110,14 @@
   }
 }
 
-.footer__links-wrap {
-  padding-top: 6px;
+.footer__email-input {
+  &:hover,
+  &:focus {
+    cursor: pointer;
 
-  li {
-    margin-bottom: 21px;
+    &::placeholder {
+      color: $white;
+    }
   }
 }
 
@@ -141,46 +140,46 @@
       left: -30px;
     }
   }
-  
-  &--facebook {
-    a {
-      &:before {
-        width: 8px;
-        height: 15px;
-        background: url("../img/facebook.svg") 0 0 no-repeat;
-        left: -26px;
-      }
+}
+
+.footer__social-facebook {
+  a {
+    &::before {
+      width: 8px;
+      height: 15px;
+      background: url("../img/facebook.svg") 0 0 no-repeat;
+      left: -26px;
     }
   }
+}
 
-  &--instagram {
-    a {
-      &:before {
-        width: 15px;
-        height: 15px;
-        background: url("../img/instagram.svg") 0 0 no-repeat;
-      }
+.footer__social-instagram {
+  a {
+    &::before {
+      width: 15px;
+      height: 15px;
+      background: url("../img/instagram.svg") 0 0 no-repeat;
     }
   }
+}
 
-  &--pinterest {
-    a {
-      &:before {
-        width: 16px;
-        height: 15px;
-        background: url("../img/pinterest.svg") 0 0 no-repeat;
-      }
+.footer__social-pinterest {
+  a {
+    &::before {
+      width: 16px;
+      height: 15px;
+      background: url("../img/pinterest.svg") 0 0 no-repeat;
     }
   }
+}
 
-  &--twitter {
-    a {
-      &:before {
-        width: 15px;
-        height: 13px;
-        background: url("../img/twitter.svg") 0 0 no-repeat;
-        top: 3px;
-      }
+.footer__social-twitter {
+  a {
+    &::before {
+      width: 15px;
+      height: 13px;
+      background: url("../img/twitter.svg") 0 0 no-repeat;
+      top: 3px;
     }
   }
 }
@@ -228,7 +227,7 @@
   .footer__list {
     margin-right: 86px;
   }
-  
+
   .footer__common-list {
     margin-right: 116px;
   }
@@ -276,7 +275,7 @@
     margin-right: 0;
     margin-bottom: 20px;
   }
-  
+
   .footer__common-list {
     margin-right: 0;
     margin-bottom: 14px;
@@ -300,54 +299,54 @@
         left: auto;
       }
     }
-    
-    &--facebook {
-      a {
-        &:before {
-          width: 12px;
-          height: 21px;
-          left: auto;
-          background-size: 12px 21px;
-        }
-      }
-    }
-  
-    &--instagram {
-      margin-right: 51px;
+  }
 
-      a {
-        &:before {
-          width: 20px;
-          height: 21px;
-          background-size: 20px 21px;
-        }
-      }
-    }
-  
-    &--pinterest {
-      margin-right: 48px;
-
-      a {
-        &:before {
-          width: 20px;
-          height: 21px;
-          background-size: 20px 21px;
-        }
-      }
-    }
-  
-    &--twitter {
-      a {
-        &:before {
-          width: 20px;
-          height: 18px;
-          background-size: 20px 18px;
-          top: 3px;
-        }
+  .footer__social-facebook {
+    a {
+      &::before {
+        width: 12px;
+        height: 21px;
+        left: auto;
+        background-size: 12px 21px;
       }
     }
   }
-  
+
+  .footer__social-instagram {
+    margin-right: 51px;
+
+    a {
+      &::before {
+        width: 20px;
+        height: 21px;
+        background-size: 20px 21px;
+      }
+    }
+  }
+
+  .footer__social-pinterest {
+    margin-right: 48px;
+
+    a {
+      &::before {
+        width: 20px;
+        height: 21px;
+        background-size: 20px 21px;
+      }
+    }
+  }
+
+  .footer__social-twitter {
+    a {
+      &::before {
+        width: 20px;
+        height: 18px;
+        background-size: 20px 18px;
+        top: 3px;
+      }
+    }
+  }
+
   .footer__text-wrap {
     width: 82%;
 
