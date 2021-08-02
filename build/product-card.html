@@ -67,7 +67,7 @@
           <div class="container">
             <div class="header__search-wrap header__search-wrap--desktop">
               <label for="search" aria-label="Type here to search"></label>
-              <input class="header__search-input" id="search" type="search" placeholder="Type here to search">
+              <input id="search" type="search" placeholder="Type here to search">
             </div>
             <button class="header__button-toggle" type="button" aria-label="Open mobile menu">
               <svg width="25" height="18">
@@ -236,9 +236,9 @@
                 <dd>18” / 20”</dd>
               </div>
             </dl>
-            <button class="product__add-cart" type="button">
+            <a class="product__add-cart" href="#">
               <span>Add to cart</span>
-            </button>
+            </a>
             <ul class="product__option-list">
               <li class="product__option-item">
                 <span>14 Day Returns</span>
@@ -515,14 +515,14 @@
         <div class="login__modal-wrap">
           <div class="login__modal">
             <h2>Log In</h2>
-            <form>
+            <form method="post" action="https://echo.htmlacademy.ru">
               <div class="login__form-wrap">
                 <label for="login-email" class="visually-hidden" aria-label="Enter your email"></label>
-                <input class="login__email-input login__input" id="login-email" type="email" placeholder="Your E-mail" required="">
+                <input id="login-email" type="email" placeholder="Your E-mail" required="">
               </div>
               <div class="login__form-wrap">
                 <label for="login-password" class="visually-hidden" aria-label="Enter your password"></label>
-                <input class="login__password-input login__input" id="login-password" type="password" placeholder="Password" required="">
+                <input id="login-password" type="password" placeholder="Password" required="">
                 <a class="login__link" href="#">Forgot your password?</a>
               </div>
               <button class="login__button-login" type="submit">
@@ -549,7 +549,7 @@
           <form method="post" action="https://echo.htmlacademy.ru">
             <div class="footer__email-wrap">
               <label for="footer-email" class="visually-hidden">Enter your email</label>
-              <input class="footer__email-input" id="footer-email" type="email" placeholder="Your E-mail">
+              <input id="footer-email" type="email" placeholder="Your E-mail">
             </div>
             <button type="submit">
               <span>Sign Up</span>

@@ -17,7 +17,7 @@ const productCardButtonModalCloseElement = document.querySelector('.product__mod
 const productCardModalWrapElement = document.querySelector('.product__modal-wrap');
 const loginModalWrapElement = document.querySelector('.login__modal-wrap');
 const loginButtonModalClose = document.querySelector('.login__modal-close');
-const loginEmailInputElement = document.querySelector('.login__email-input');
+const loginEmailInputElement = document.querySelector("#login-email");
 const loginButtonLoginSubmit = document.querySelector('.login__button-login');
 
 const DESKTOP_WINDOW_SIZE_MAX = 1366;
@@ -254,7 +254,8 @@ if (calalogFilterOpenButtonElement && catalogFilterElement && catalogFilterClose
 }
 
 if (productCardButtonAddToCardElement) {
-  productCardButtonAddToCardElement.addEventListener('click', () => {
+  productCardButtonAddToCardElement.addEventListener('click', (evt) => {
+    evt.preventDefault();
     bodyElement.classList.add('body--modal-open');
     productCardModalWrapElement.classList.add('product__modal-wrap--open');
   });

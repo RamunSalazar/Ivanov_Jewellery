@@ -63,7 +63,7 @@
           <div class="container">
             <div class="header__search-wrap header__search-wrap--desktop">
               <label for="search" aria-label="Type here to search"></label>
-              <input class="header__search-input" id="search" type="search" placeholder="Type here to search">
+              <input id="search" type="search" placeholder="Type here to search">
             </div>
             <button class="header__button-toggle" type="button" aria-label="Open mobile menu">
               <svg width="25" height="18">
@@ -155,19 +155,19 @@
                   <div class="catalog__wrap">
                     <ul>
                       <li>
-                        <input class="catalog__checkbox-input visually-hidden" id="Necklaces" type="checkbox">
+                        <input class="visually-hidden" id="Necklaces" type="checkbox">
                         <label for="Necklaces">Necklaces</label>
                       </li>
                       <li>
-                        <input class="catalog__checkbox-input visually-hidden" id="Chokers" type="checkbox">
+                        <input class="visually-hidden" id="Chokers" type="checkbox">
                         <label for="Chokers">Chokers</label>
                       </li>
                       <li>
-                        <input class="catalog__checkbox-input visually-hidden" id="Rings" type="checkbox">
+                        <input class="visually-hidden" id="Rings" type="checkbox">
                         <label for="Rings">Rings</label>
                       </li>
                       <li>
-                        <input class="catalog__checkbox-input visually-hidden" id="Earrings" type="checkbox">
+                        <input class="visually-hidden" id="Earrings" type="checkbox">
                         <label for="Earrings">Earrings</label>
                       </li>
                     </ul>
@@ -183,11 +183,11 @@
                   <div class="catalog__wrap">
                     <ul>
                       <li>
-                        <input class="catalog__checkbox-input visually-hidden" id="Gold" type="checkbox">
+                        <input class="visually-hidden" id="Gold" type="checkbox">
                         <label for="Gold">Gold</label>
                       </li>
                       <li>
-                        <input class="catalog__checkbox-input visually-hidden" id="Silver" type="checkbox">
+                        <input class="visually-hidden" id="Silver" type="checkbox">
                         <label for="Silver">Silver</label>
                       </li>
                     </ul>
@@ -203,11 +203,11 @@
                   <div class="catalog__wrap">
                     <ul>
                       <li>
-                        <input class="catalog__checkbox-input visually-hidden" id="Pink-flamingo" type="checkbox">
+                        <input class="visually-hidden" id="Pink-flamingo" type="checkbox">
                         <label for="Pink-flamingo">Pink flamingo</label>
                       </li>
                       <li>
-                        <input class="catalog__checkbox-input visually-hidden" id="Dreams" type="checkbox">
+                        <input class="visually-hidden" id="Dreams" type="checkbox">
                         <label for="Dreams">Dreams</label>
                       </li>
                     </ul>
@@ -454,14 +454,14 @@
         <div class="login__modal-wrap">
           <div class="login__modal">
             <h2>Log In</h2>
-            <form>
+            <form method="post" action="https://echo.htmlacademy.ru">
               <div class="login__form-wrap">
                 <label for="login-email" class="visually-hidden" aria-label="Enter your email"></label>
-                <input class="login__email-input login__input" id="login-email" type="email" placeholder="Your E-mail" required>
+                <input id="login-email" type="email" placeholder="Your E-mail" required>
               </div>
               <div class="login__form-wrap">
                 <label for="login-password" class="visually-hidden" aria-label="Enter your password"></label>
-                <input class="login__password-input login__input" id="login-password" type="password" placeholder="Password" required>
+                <input id="login-password" type="password" placeholder="Password" required>
                 <a class="login__link" href="#">Forgot your password?</a>
               </div>
               <button class="login__button-login" type="submit">
@@ -488,7 +488,7 @@
           <form method="post" action="https://echo.htmlacademy.ru">
             <div class="footer__email-wrap">
               <label for="footer-email" class="visually-hidden">Enter your email</label>
-              <input class="footer__email-input" id="footer-email" type="email" placeholder="Your E-mail">
+              <input id="footer-email" type="email" placeholder="Your E-mail">
             </div>
             <button type="submit">
               <span>Sign Up</span>

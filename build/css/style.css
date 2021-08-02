@@ -175,17 +175,17 @@ main {
   .header__search-wrap label:hover {
     cursor: pointer; }
 
-.header__search-input:hover, .header__search-input:focus {
+.header__search-wrap input:hover, .header__search-wrap input:focus {
   cursor: pointer; }
-  .header__search-input:hover::-webkit-input-placeholder, .header__search-input:focus::-webkit-input-placeholder {
+  .header__search-wrap input:hover::-webkit-input-placeholder, .header__search-wrap input:focus::-webkit-input-placeholder {
     color: #000000; }
-  .header__search-input:hover::-moz-placeholder, .header__search-input:focus::-moz-placeholder {
+  .header__search-wrap input:hover::-moz-placeholder, .header__search-wrap input:focus::-moz-placeholder {
     color: #000000; }
-  .header__search-input:hover:-ms-input-placeholder, .header__search-input:focus:-ms-input-placeholder {
+  .header__search-wrap input:hover:-ms-input-placeholder, .header__search-wrap input:focus:-ms-input-placeholder {
     color: #000000; }
-  .header__search-input:hover::-ms-input-placeholder, .header__search-input:focus::-ms-input-placeholder {
+  .header__search-wrap input:hover::-ms-input-placeholder, .header__search-wrap input:focus::-ms-input-placeholder {
     color: #000000; }
-  .header__search-input:hover::placeholder, .header__search-input:focus::placeholder {
+  .header__search-wrap input:hover::placeholder, .header__search-wrap input:focus::placeholder {
     color: #000000; }
 
 .header__links-wrap {
@@ -659,6 +659,23 @@ main {
       height: 1px;
       background-color: #ffffff;
       bottom: -4px; }
+  .footer__wrap button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: none;
+    background-color: transparent;
+    color: #ffffff; }
+    .footer__wrap button:hover, .footer__wrap button:focus {
+      cursor: pointer;
+      opacity: 0.7; }
+  .footer__wrap span {
+    display: inline-block;
+    vertical-align: center;
+    margin-right: 12px; }
   .footer__wrap input {
     border: none;
     background-color: transparent;
@@ -689,35 +706,18 @@ main {
       font-size: 14px;
       line-height: 21px;
       color: #9b9997; }
-  .footer__wrap button {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    border: none;
-    background-color: transparent;
-    color: #ffffff; }
-    .footer__wrap button:hover, .footer__wrap button:focus {
-      cursor: pointer;
-      opacity: 0.7; }
-  .footer__wrap span {
-    display: inline-block;
-    vertical-align: center;
-    margin-right: 12px; }
 
-.footer__email-input:hover, .footer__email-input:focus {
+.footer__wrap input:hover, .footer__wrap input:focus {
   cursor: pointer; }
-  .footer__email-input:hover::-webkit-input-placeholder, .footer__email-input:focus::-webkit-input-placeholder {
+  .footer__wrap input:hover::-webkit-input-placeholder, .footer__wrap input:focus::-webkit-input-placeholder {
     color: #ffffff; }
-  .footer__email-input:hover::-moz-placeholder, .footer__email-input:focus::-moz-placeholder {
+  .footer__wrap input:hover::-moz-placeholder, .footer__wrap input:focus::-moz-placeholder {
     color: #ffffff; }
-  .footer__email-input:hover:-ms-input-placeholder, .footer__email-input:focus:-ms-input-placeholder {
+  .footer__wrap input:hover:-ms-input-placeholder, .footer__wrap input:focus:-ms-input-placeholder {
     color: #ffffff; }
-  .footer__email-input:hover::-ms-input-placeholder, .footer__email-input:focus::-ms-input-placeholder {
+  .footer__wrap input:hover::-ms-input-placeholder, .footer__wrap input:focus::-ms-input-placeholder {
     color: #ffffff; }
-  .footer__email-input:hover::placeholder, .footer__email-input:focus::placeholder {
+  .footer__wrap input:hover::placeholder, .footer__wrap input:focus::placeholder {
     color: #ffffff; }
 
 .footer__list {
@@ -1697,9 +1697,9 @@ main {
   .catalog__form-wrap li:last-child {
     margin-bottom: 0; }
 
-.catalog__checkbox-input + label {
+.catalog__filter-wrap input + label {
   position: relative; }
-  .catalog__checkbox-input + label::before {
+  .catalog__filter-wrap input + label::before {
     position: absolute;
     content: "";
     width: 13px;
@@ -1707,11 +1707,11 @@ main {
     border: 1px solid #a87b62;
     top: 3px;
     left: -26px; }
-  .catalog__checkbox-input + label:hover, .catalog__checkbox-input + label:focus {
+  .catalog__filter-wrap input + label:hover, .catalog__filter-wrap input + label:focus {
     cursor: pointer;
     opacity: 0.7; }
 
-.catalog__checkbox-input:checked + label::after {
+.catalog__filter-wrap input:checked + label::after {
   position: absolute;
   content: "";
   width: 15px;
@@ -2232,24 +2232,24 @@ main {
 
 .product__info-wrap {
   width: 370px; }
-  .product__info-wrap button {
-    border: none;
-    width: 100%;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 21px;
-    color: #ffffff;
-    background-color: #a87b62;
-    padding-top: 25px;
-    padding-bottom: 22px;
-    margin-bottom: 17px; }
-    .product__info-wrap button:hover, .product__info-wrap button:focus {
-      cursor: pointer;
-      border: 1px solid #a87b62;
-      padding-top: 24px;
-      padding-bottom: 21px;
-      color: #a87b62;
-      background-color: transparent; }
+
+.product__add-cart {
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+  background-color: #a87b62;
+  padding-top: 25px;
+  padding-bottom: 22px;
+  margin-bottom: 17px;
+  text-align: center; }
+  .product__add-cart:hover, .product__add-cart:focus {
+    border: 1px solid #a87b62;
+    padding-top: 24px;
+    padding-bottom: 21px;
+    color: #1d1613;
+    background-color: transparent; }
 
 .product__img-wrap {
   display: -webkit-box;
@@ -2587,8 +2587,8 @@ main {
       height: 129px; }
   .product__info-wrap {
     width: 319px; }
-    .product__info-wrap button {
-      margin-bottom: 13px; }
+  .product__add-cart {
+    margin-bottom: 13px; }
   .product__title-wrap {
     position: relative;
     top: 11px;
@@ -2862,17 +2862,17 @@ main {
     .login__form-wrap:last-of-type input {
       margin-bottom: 14px; }
 
-.login__input:hover, .login__input:focus {
+.login__form-wrap input:hover, .login__form-wrap input:focus {
   cursor: pointer; }
-  .login__input:hover::-webkit-input-placeholder, .login__input:focus::-webkit-input-placeholder {
+  .login__form-wrap input:hover::-webkit-input-placeholder, .login__form-wrap input:focus::-webkit-input-placeholder {
     color: #1d1613; }
-  .login__input:hover::-moz-placeholder, .login__input:focus::-moz-placeholder {
+  .login__form-wrap input:hover::-moz-placeholder, .login__form-wrap input:focus::-moz-placeholder {
     color: #1d1613; }
-  .login__input:hover:-ms-input-placeholder, .login__input:focus:-ms-input-placeholder {
+  .login__form-wrap input:hover:-ms-input-placeholder, .login__form-wrap input:focus:-ms-input-placeholder {
     color: #1d1613; }
-  .login__input:hover::-ms-input-placeholder, .login__input:focus::-ms-input-placeholder {
+  .login__form-wrap input:hover::-ms-input-placeholder, .login__form-wrap input:focus::-ms-input-placeholder {
     color: #1d1613; }
-  .login__input:hover::placeholder, .login__input:focus::placeholder {
+  .login__form-wrap input:hover::placeholder, .login__form-wrap input:focus::placeholder {
     color: #1d1613; }
 
 .login__link {
@@ -2889,9 +2889,6 @@ main {
   margin-left: 0; }
   .login__link:hover, .login__link:focus {
     color: #1d1613; }
-
-.login__password-input a:hover, .login__password-input a:focus {
-  color: #1d1613; }
 
 .login__button-login {
   width: 100%;
