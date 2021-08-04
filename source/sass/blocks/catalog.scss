@@ -576,7 +576,7 @@
       padding-left: 22px;
       padding-top: 34px;
       padding-right: 23px;
-      padding-bottom: 34px; 
+      padding-bottom: 34px;
     }
 
     svg {
@@ -700,10 +700,10 @@
     }
 
     img {
-      min-width: calc(0.4375 * 100vw - 10px);
-      max-width: calc(0.4375 * 100vw - 10px);
-      min-height: calc(0.4375 * 100vw - 4px);
-      max-height: calc(0.4375 * 100vw - 4px);
+      min-width: calc(0.44 * 100vw - 10px);
+      max-width: calc(0.44 * 100vw - 10px);
+      min-height: calc(0.44 * 100vw - 4px);
+      max-height: calc(0.44 * 100vw - 4px);
     }
 
     &::before {

@@ -1069,8 +1069,8 @@ main {
     margin-bottom: 33px;
     width: 100%; }
     .slider-shop__jewellery-list img {
-      height: calc(0.446 * 100vw - 7px);
-      min-width: calc(0.446 * 100vw - 13px); }
+      height: calc(0.45 * 100vw - 7px);
+      min-width: calc(0.45 * 100vw - 13px); }
   .slider-shop__button-wrap button {
     visibility: hidden; }
   .slider-shop__button-wrap--product-card button {
@@ -1600,23 +1600,23 @@ main {
     padding-top: 12px;
     padding-bottom: 71px; }
   .jewellery-galery ul {
-    grid-template-columns: repeat(2, calc(0.4375 * 100vw - 7px));
-    grid-template-rows: calc(0.4375 * 100vw - 7px) calc(0.4375 * 100vw - 53px) calc(0.4375 * 100vw - 53px);
+    grid-template-columns: repeat(2, calc(0.44 * 100vw - 7px));
+    grid-template-rows: calc(0.44 * 100vw - 7px) calc(0.44 * 100vw - 53px) calc(0.44 * 100vw - 53px);
     grid-row-gap: 27px;
     grid-column-gap: 8.2%;
     width: 100%;
     margin-left: auto;
     margin-right: auto; }
   .jewellery-galery img {
-    min-width: calc(0.4375 * 100vw - 7px);
-    max-width: calc(0.4375 * 100vw - 7px);
-    height: calc(0.4375 * 100vw - 7px); }
+    min-width: calc(0.44 * 100vw - 7px);
+    max-width: calc(0.44 * 100vw - 7px);
+    height: calc(0.44 * 100vw - 7px); }
   .jewellery-galery .jewellery-galery__img--min-height {
-    height: calc(0.4375 * 100vw - 53px); }
+    height: calc(0.44 * 100vw - 53px); }
   .jewellery-galery .jewellery-galery__img--max-size {
-    min-width: calc(0.4375 * 100vw - 7px);
-    max-width: calc(0.4375 * 100vw - 7px);
-    height: calc(0.875 * 100vw - 33px); }
+    min-width: calc(0.44 * 100vw - 7px);
+    max-width: calc(0.44 * 100vw - 7px);
+    height: calc(0.88 * 100vw - 33px); }
   .jewellery-galery__img-wrap--desktop {
     display: none; }
   .jewellery-galery__img-wrap--mobile {
@@ -2189,10 +2189,10 @@ main {
     padding-top: 40px;
     padding-bottom: 65px; }
   .catalog img {
-    min-width: calc(0.4375 * 100vw - 10px);
-    max-width: calc(0.4375 * 100vw - 10px);
-    min-height: calc(0.4375 * 100vw - 4px);
-    max-height: calc(0.4375 * 100vw - 4px); }
+    min-width: calc(0.44 * 100vw - 10px);
+    max-width: calc(0.44 * 100vw - 10px);
+    min-height: calc(0.44 * 100vw - 4px);
+    max-height: calc(0.44 * 100vw - 4px); }
   .catalog::before {
     display: none; }
   .catalog__filter-open {
