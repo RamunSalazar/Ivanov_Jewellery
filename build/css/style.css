@@ -2231,15 +2231,23 @@ main {
     margin-bottom: 20px; }
   .catalog__filter-close {
     top: -7px;
-    right: -10px;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none; }
+    right: -10px; }
+    .catalog__filter-close::before, .catalog__filter-close::after {
+      position: absolute;
+      content: "";
+      background-color: #ffffff;
+      width: 17px;
+      height: 2px;
+      top: 15px;
+      right: 7px; }
+    .catalog__filter-close::before {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg); }
+    .catalog__filter-close::after {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
     .catalog__filter-close svg {
-      display: block;
-      -webkit-appearance: none;
-         -moz-appearance: none;
-              appearance: none; }
+      display: none; }
   .catalog__filter-wrap:last-of-type {
     margin-bottom: 30px; }
   .catalog__filter-wrap span {

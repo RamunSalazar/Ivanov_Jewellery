@@ -775,9 +775,27 @@
     top: -7px;
     right: -10px;
 
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: $white;
+      width: 17px;
+      height: 2px;
+      top: 15px;
+      right: 7px;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
     svg {
-      width: 14px;
-      height: 14px;
+      display: none;
     }
   }
 
