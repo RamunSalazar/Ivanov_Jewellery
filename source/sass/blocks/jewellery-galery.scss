@@ -174,30 +174,30 @@
     }
 
     ul {
-      grid-template-columns: repeat(2, max-content);
-      grid-template-rows: 133px 87px 87px;
+      grid-template-columns: repeat(2, calc(0.4375 * 100vw - 7px));
+      grid-template-rows: calc(0.4375 * 100vw - 7px) calc(0.4375 * 100vw - 53px) calc(0.4375 * 100vw - 53px);
       grid-row-gap: 27px;
-      grid-column-gap: 24px;
-      width: 290px;
+      grid-column-gap: 8.2%;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
     }
 
     img {
-      min-width: 133px;
-      max-width: 133px;
-      height: auto;
+      min-width: calc(0.4375 * 100vw - 7px);
+      max-width: calc(0.4375 * 100vw - 7px);
+      height: calc(0.4375 * 100vw - 7px);
     }
 
     .jewellery-galery__img {
       &--min-height {
-        height: auto;
+        height: calc(0.4375 * 100vw - 53px);
       }
 
       &--max-size {
-        min-width: 133px;
-        max-width: 133px;
-        height: auto;
+        min-width: calc(0.4375 * 100vw - 7px);
+        max-width: calc(0.4375 * 100vw - 7px);
+        height: calc(0.875 * 100vw - 33px);
       }
     }
   }

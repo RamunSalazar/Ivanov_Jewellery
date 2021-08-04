@@ -7,7 +7,7 @@
   ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(2, max-content);
     grid-row-gap: 30px;
     grid-column-gap: 30px;
   }
@@ -129,20 +129,20 @@
       opacity: 0.7;
     }
   }
+}
 
-  @media (min-resolution: 2dppx) {
-    .blog__list-item {
-      &--one {
-        background: $special-grey url("../img/jess-harper-sunday@2x.png") 0 0/285px 300px no-repeat;
-      }
+@media (min-resolution: 2dppx) {
+  .blog__list-item {
+    &--one {
+      background: $special-grey url("../img/jess-harper-sunday@2x.png") 0 0/285px 300px no-repeat;
+    }
 
-      &--two {
-        background: $special-grey url("../img/alex-holyoake@2x.png") 285px 0/285px 300px no-repeat;
-      }
+    &--two {
+      background: $special-grey url("../img/alex-holyoake@2x.png") 285px 0/285px 300px no-repeat;
+    }
 
-      &--three {
-        background: $special-grey url("../img/alve-odonnell@2x.png") 0 0/570px 630px no-repeat;
-      }
+    &--three {
+      background: $special-grey url("../img/alve-odonnell@2x.png") 0 0/570px 630px no-repeat;
     }
   }
 }
@@ -290,15 +290,15 @@
     padding-top: 256px;
 
     &--one {
-      background: $special-grey url("../img/jess-harper-sunday-mobile.png") center 0/290px 256px no-repeat;
+      background: $special-grey url("../img/jess-harper-sunday-mobile.png") 0 0/100% 256px no-repeat;
     }
 
     &--two {
-      background: $special-grey url("../img/alex-holyoake-mobile.png") center 0/290px 256px no-repeat;
+      background: $special-grey url("../img/alex-holyoake-mobile.png") 0 0/100% 256px no-repeat;
     }
 
     &--three {
-      background: $special-grey url("../img/alve-odonnell-mobile.png") center 0/290px 256px no-repeat;
+      background: $special-grey url("../img/alve-odonnell-mobile.png") 0 0/100% 256px no-repeat;
 
       .blog__item-wrap {
         padding-top: 62px;

@@ -59,7 +59,8 @@
   padding-right: 48px;
   padding-bottom: 36px;
 
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
 
     span {
@@ -119,7 +120,7 @@
 
     p {
       margin-left: 0;
-      width: 528px;
+      width: 92%;
     }
 
     span {
@@ -172,7 +173,7 @@
 
   .faq__list {
     p {
-      width: 207px;
+      width: 85%;
     }
 
     svg {

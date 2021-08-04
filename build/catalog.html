@@ -71,7 +71,7 @@
                 <use class="header__image header__image--open" xlink:href="#hamburger-white"></use>
               </svg>
             </button>
-            <a class="header__logo-link header__logo-link--inner-page" href="index.html" aria-label="Go to main page">
+            <a class="header__logo-link header__logo-link--inner-page" href="main.html" aria-label="Go to main page">
               <svg width="66" height="66">
                 <use class="header__image header__image--close" xlink:href="#logo"></use>
                 <use class="header__image header__image--open" xlink:href="#logo-white"></use>
@@ -146,7 +146,7 @@
             <div class="catalog__form-wrap">
               <form method="post" action="https://echo.htmlacademy.ru">
                 <div class="catalog__filter-wrap catalog__filter-wrap--nojs">
-                  <span class="catalog__filter-name">
+                  <span class="catalog__filter-name" tabindex="0">
                     <span>Product</span>
                     <svg width="17" height="10">
                       <use xlink:href="#dawn-arrow"></use>
@@ -154,27 +154,27 @@
                   </span>
                   <div class="catalog__wrap">
                     <ul>
-                      <li>
-                        <input class="visually-hidden" id="Necklaces" type="checkbox">
+                      <li tabindex="0">
+                        <input class="visually-hidden" id="Necklaces" type="checkbox" tabindex="-1">
                         <label for="Necklaces">Necklaces</label>
                       </li>
-                      <li>
-                        <input class="visually-hidden" id="Chokers" type="checkbox">
+                      <li tabindex="0">
+                        <input class="visually-hidden" id="Chokers" type="checkbox" tabindex="-1">
                         <label for="Chokers">Chokers</label>
                       </li>
-                      <li>
-                        <input class="visually-hidden" id="Rings" type="checkbox">
+                      <li tabindex="0">
+                        <input class="visually-hidden" id="Rings" type="checkbox" tabindex="-1">
                         <label for="Rings">Rings</label>
                       </li>
-                      <li>
-                        <input class="visually-hidden" id="Earrings" type="checkbox">
+                      <li tabindex="0">
+                        <input class="visually-hidden" id="Earrings" type="checkbox" tabindex="-1">
                         <label for="Earrings">Earrings</label>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div class="catalog__filter-wrap catalog__filter-wrap--nojs">
-                  <span class="catalog__filter-name">
+                  <span class="catalog__filter-name" tabindex="0">
                     <span>Material</span>
                     <svg width="17" height="10">
                       <use xlink:href="#dawn-arrow"></use>
@@ -182,19 +182,19 @@
                   </span>
                   <div class="catalog__wrap">
                     <ul>
-                      <li>
-                        <input class="visually-hidden" id="Gold" type="checkbox">
+                      <li tabindex="0">
+                        <input class="visually-hidden" id="Gold" type="checkbox" tabindex="-1">
                         <label for="Gold">Gold</label>
                       </li>
-                      <li>
-                        <input class="visually-hidden" id="Silver" type="checkbox">
+                      <li tabindex="0">
+                        <input class="visually-hidden" id="Silver" type="checkbox" tabindex="-1">
                         <label for="Silver">Silver</label>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div class="catalog__filter-wrap catalog__filter-wrap--nojs">
-                  <span class="catalog__filter-name">
+                  <span class="catalog__filter-name" tabindex="0">
                     <span>Collection</span>
                     <svg width="17" height="10">
                       <use xlink:href="#dawn-arrow"></use>
@@ -202,19 +202,19 @@
                   </span>
                   <div class="catalog__wrap">
                     <ul>
-                      <li>
-                        <input class="visually-hidden" id="Pink-flamingo" type="checkbox">
+                      <li tabindex="0">
+                        <input class="visually-hidden" id="Pink-flamingo" type="checkbox" tabindex="-1">
                         <label for="Pink-flamingo">Pink flamingo</label>
                       </li>
-                      <li>
-                        <input class="visually-hidden" id="Dreams" type="checkbox">
+                      <li tabindex="0">
+                        <input class="visually-hidden" id="Dreams" type="checkbox" tabindex="-1">
                         <label for="Dreams">Dreams</label>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div class="catalog__filter-range catalog__filter-wrap catalog__filter-wrap--nojs">
-                  <span class="catalog__filter-name">
+                  <span class="catalog__filter-name" tabindex="0">
                     <span>Price</span>
                     <svg width="17" height="10">
                       <use xlink:href="#dawn-arrow"></use>
@@ -226,11 +226,11 @@
                     <div class="catalog__range catalog__range--range-wrap">
                       <div class="catalog__range catalog__range--price-wrap catalog__range-price">
                         <div class="catalog__range catalog__range--price-range"></div>
-                        <span>$ 55</span>
+                        <span tabindex="0">$ 55</span>
                       </div>
-                      <div class="catalog__range catalog__range--price-wrap">
+                      <div class="catalog__range catalog__range--price-wrap catalog__range-price">
                         <div class="catalog__range catalog__range--price-range"></div>
-                        <span>$ 155</span>
+                        <span tabindex="0">$ 155</span>
                       </div>
                     </div>
                   </div>
@@ -488,7 +488,7 @@
           <form method="post" action="https://echo.htmlacademy.ru">
             <div class="footer__email-wrap">
               <label for="footer-email" class="visually-hidden">Enter your email</label>
-              <input id="footer-email" type="email" placeholder="Your E-mail">
+              <input id="footer-email" type="email" placeholder="Your E-mail" required="">
             </div>
             <button type="submit">
               <span>Sign Up</span>

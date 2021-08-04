@@ -19,6 +19,10 @@ const loginModalWrapElement = document.querySelector('.login__modal-wrap');
 const loginButtonModalClose = document.querySelector('.login__modal-close');
 const loginEmailInputElement = document.querySelector('#login-email');
 const loginButtonLoginSubmit = document.querySelector('.login__button-login');
+const sliderShopPoginationCountElement = document.querySelector('.slider-shop__pagination-count');
+const catalogFilterNameElement = document.querySelectorAll('.catalog__filter-name');
+const catalogWrapListItemElement = document.querySelectorAll('.catalog__wrap li');
+const catalogWrapCheckboxElement = document.querySelectorAll('.catalog__wrap input');
 
 const DESKTOP_WINDOW_SIZE_MAX = 1366;
 const DESKTOP_WINDOW_SIZE_MIN = 1024;
@@ -26,7 +30,9 @@ const TABLET_WINDOW_SIZE = 768;
 const DESKTOP_CONTAINER_WIDTH_MAX = 1200;
 const DESKTOP_CONTAINER_WIDTH_MIN = 988;
 const TABLET_CONTAINER_WIDTH = 708;
+const MOBILE_CONTAINER_WIDTH = 310;
 const ESCAPE_KEY_CODE = 27;
+const ENTER_KEY_CODE = 13;
 let index = 0;
 let count = 0;
 let flag;
@@ -35,6 +41,13 @@ let sliderShopPaginationLinks = document.querySelectorAll('.slider-shop__link');
 let headerLoginElement = document.querySelector('.header__login');
 let headerLoginLinkElement = document.querySelector('.header__login-link');
 let storageEmail = '';
+let ongoingTouches = [];
+let result = 0;
+let sizeWindow = (window.innerWidth * 0.0625);
+
+window.addEventListener('resize', () => {
+  sizeWindow = window.innerWidth - (window.innerWidth * 0.0625);
+});
 
 if (headerWrapElement) {
   headerWrapElement.classList.remove('header__wrap--nojs');
@@ -94,6 +107,10 @@ const linkCounter = () => {
   }
   return linkCount;
 };
+
+let copyTouch = ({ identifier, pageX, pageY }) => {
+  return { identifier, pageX, pageY };
+}
 
 linkCount = linkCounter();
 
@@ -210,6 +227,61 @@ if (sliderShopJewelleryListElement) {
   }
 }
 
+if (sliderShopPoginationCountElement && sliderShopJewelleryListElement) {
+  sliderShopJewelleryListElement.addEventListener('touchstart', (evt) => {
+    let touches = evt.changedTouches;
+    for (var i = 0; i < touches.length; i++) {
+      ongoingTouches.push(copyTouch(touches[i]));
+    }
+  });
+  
+  sliderShopJewelleryListElement.addEventListener('touchend', (evt) => {
+    let touches = evt.changedTouches;
+    for (var i = 0; i < touches.length; i++) {
+      ongoingTouches.push(copyTouch(touches[i]));
+      if (ongoingTouches[0].pageX > ongoingTouches[1].pageX && result < sizeWindow * 5) {
+        result += (ongoingTouches[0].pageX - ongoingTouches[1].pageX);
+        if (result >= sizeWindow) {
+          sliderShopPoginationCountElement.innerHTML = '2';
+        } 
+        if (result >= sizeWindow * 2) {
+          sliderShopPoginationCountElement.innerHTML = '3';
+        }
+        if (result >= sizeWindow * 3) {
+          sliderShopPoginationCountElement.innerHTML = '4';
+        }
+        if (result >= sizeWindow * 4) {
+          sliderShopPoginationCountElement.innerHTML = '5';
+        }
+        if (result >= sizeWindow * 5) {
+          sliderShopPoginationCountElement.innerHTML = '6';
+          result = sizeWindow * 5;
+        } 
+      }
+      if (ongoingTouches[0].pageX < ongoingTouches[1].pageX && result >= 0) {
+        result -= (ongoingTouches[1].pageX - ongoingTouches[0].pageX);
+        if (result < sizeWindow * 5) {
+          sliderShopPoginationCountElement.innerHTML = '5';
+        }
+        if (result < sizeWindow * 4) {
+          sliderShopPoginationCountElement.innerHTML = '4';
+        }
+        if (result < sizeWindow * 3) {
+          sliderShopPoginationCountElement.innerHTML = '3';
+        }
+        if (result < sizeWindow * 2) {
+          sliderShopPoginationCountElement.innerHTML = '2';
+        }
+        if (result < sizeWindow) {
+          sliderShopPoginationCountElement.innerHTML = '1';
+          result = 0;
+        } 
+      }
+      ongoingTouches.splice(0, 2)
+    }
+  });
+}
+
 if (faqListItemElement) {
   for (let i = 0; i < faqListItemElement.length; i++) {
     faqListItemElement[i].addEventListener('click', () => {
@@ -223,15 +295,42 @@ if (faqListItemElement) {
       }
     });
   }
+
+  for (let i = 0; i < faqListItemElement.length; i++) {
+    faqListItemElement[i].addEventListener('keydown', (evt) => {
+      if (evt.keyCode === ENTER_KEY_CODE) {
+        if (faqListItemElement[i].classList.contains('faq__list-item--open')) {
+          faqListItemElement[i].classList.remove('faq__list-item--open');
+        } else {
+          for (let j = 0; j < faqListItemElement.length; j++) {
+            faqListItemElement[j].classList.remove('faq__list-item--open');
+          }
+          faqListItemElement[i].classList.add('faq__list-item--open');
+        }
+      }
+    });
+  }
 }
 
-if (catalogFilterWrapElement) {
+if (catalogFilterWrapElement && catalogFilterNameElement) {
   for (let i = 0; i < catalogFilterWrapElement.length; i++) {
-    catalogFilterWrapElement[i].addEventListener('click', () => {
+    catalogFilterNameElement[i].addEventListener('click', () => {
       if (catalogFilterWrapElement[i].classList.contains('catalog__filter-wrap--open')) {
         catalogFilterWrapElement[i].classList.remove('catalog__filter-wrap--open');
       } else {
         catalogFilterWrapElement[i].classList.add('catalog__filter-wrap--open');
+      }
+    });
+  }
+
+  for (let i = 0; i < catalogFilterWrapElement.length; i++) {
+    catalogFilterNameElement[i].addEventListener('keydown', (evt) => {
+      if (evt.keyCode === ENTER_KEY_CODE) {
+        if (catalogFilterWrapElement[i].classList.contains('catalog__filter-wrap--open')) {
+          catalogFilterWrapElement[i].classList.remove('catalog__filter-wrap--open');
+        } else {
+          catalogFilterWrapElement[i].classList.add('catalog__filter-wrap--open');
+        }
       }
     });
   }
@@ -240,17 +339,34 @@ if (catalogFilterWrapElement) {
 if (calalogFilterOpenButtonElement && catalogFilterElement && catalogFilterCloseButtonElement) {
   calalogFilterOpenButtonElement.addEventListener('click', () => {
     catalogFilterElement.classList.add('catalog__filter--open');
+    bodyElement.classList.add('body--menu');
   });
 
   window.addEventListener('keydown', (evt) => {
     if (evt.keyCode === ESCAPE_KEY_CODE) {
       catalogFilterElement.classList.remove('catalog__filter--open');
+      bodyElement.classList.remove('body--menu');
     }
   });
 
   catalogFilterCloseButtonElement.addEventListener('click', () => {
     catalogFilterElement.classList.remove('catalog__filter--open');
+    bodyElement.classList.remove('body--menu');
   });
+}
+
+if (catalogWrapListItemElement && catalogWrapCheckboxElement) {
+  for (let i = 0; i < catalogWrapListItemElement.length; i++) {
+    catalogWrapListItemElement[i].addEventListener('keydown', (evt) => {
+      if (evt.keyCode === ENTER_KEY_CODE) {
+        if (catalogWrapCheckboxElement[i].getAttribute('checked')) {
+          catalogWrapCheckboxElement[i].removeAttribute('checked');
+        } else {
+          catalogWrapCheckboxElement[i].setAttribute('checked', 'checked');
+        }
+      }
+    });
+  }
 }
 
 if (productCardButtonAddToCardElement) {
@@ -296,7 +412,7 @@ window.addEventListener('resize', () => {
 if (headerLoginElement) {
   headerLoginElement.addEventListener('click', (evt) => {
     evt.preventDefault();
-    bodyElement.classList.add('body--modal-open');
+    bodyElement.classList.add('body--menu');
     loginModalWrapElement.classList.add('login__modal-wrap--open');
     loginEmailInputElement.focus();
     loginEmailInputElement.value = storageEmail;
@@ -306,7 +422,7 @@ if (headerLoginElement) {
 if (headerLoginLinkElement) {
   headerLoginLinkElement.addEventListener('click', (evt) => {
     evt.preventDefault();
-    bodyElement.classList.add('body--modal-open');
+    bodyElement.classList.add('body--menu');
     loginModalWrapElement.classList.add('login__modal-wrap--open');
     headerWrapElement.classList.remove('header__wrap--open');
     headerMobileMenuElement.classList.remove('header__mobile-menu--open');
@@ -317,20 +433,20 @@ if (headerLoginLinkElement) {
 
 if (loginButtonModalClose) {
   loginButtonModalClose.addEventListener('click', () => {
-    bodyElement.classList.remove('body--modal-open');
+    bodyElement.classList.remove('body--menu');
     loginModalWrapElement.classList.remove('login__modal-wrap--open');
   });
 
   window.addEventListener('keydown', (evt) => {
     if (evt.keyCode === ESCAPE_KEY_CODE) {
-      bodyElement.classList.remove('body--modal-open');
+      bodyElement.classList.remove('body--menu');
       loginModalWrapElement.classList.remove('login__modal-wrap--open');
     }
   });
 
   window.addEventListener('click', (evt) => {
     if (evt.target.classList.contains('login__modal-wrap')) {
-      bodyElement.classList.remove('body--modal-open');
+      bodyElement.classList.remove('body--menu');
       loginModalWrapElement.classList.remove('login__modal-wrap--open');
     }
   });
