@@ -1,3 +1,7 @@
+.header {
+  overflow-x: hidden;
+}
+
 .header__logo-wrap {
   .container {
     display: flex;
@@ -135,8 +139,8 @@
   background: $brown;
 
   .container {
-    width: 1366px;
-    background: url("../img/main-background.png") 0 0/1366px 471px no-repeat;
+    width: 100%;
+    background: url("../img/main-background.png") 0 0/100% 105% no-repeat;
     padding-top: 151px;
     padding-bottom: 145px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -172,7 +176,7 @@
 
   &--catalog {
     .container {
-      background: url("../img/catalog-background.png") 0 0/1366px 261px no-repeat;
+      background: url("../img/catalog-background.png") 0 0/100% 105% no-repeat;
       padding-top: 70px;
       padding-bottom: 66px;
     }
@@ -236,11 +240,11 @@
 @media (min-resolution: 2dppx) {
   .header__main-wrap {
     .container {
-      background: url("../img/main-background@2x.png") 0 0/1366px 471px no-repeat;
+      background: url("../img/main-background@2x.png") 0 0/100% 105% no-repeat;
 
       &--catalog {
         .container {
-          background: url("../img/catalog-background@2x.png") 0 0/1366px 261px no-repeat;
+          background: url("../img/catalog-background@2x.png") 0 0/100% 105% no-repeat;
         }
       }
     }

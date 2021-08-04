@@ -111,6 +111,9 @@ main {
       -ms-flex: 1 0 auto;
           flex: 1 0 auto; }
 
+.header {
+  overflow-x: hidden; }
+
 .header__logo-wrap .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -247,8 +250,8 @@ main {
 .header__main-wrap {
   background: #a87b62; }
   .header__main-wrap .container {
-    width: 1366px;
-    background: url("../img/main-background.png") 0 0/1366px 471px no-repeat;
+    width: 100%;
+    background: url("../img/main-background.png") 0 0/100% 105% no-repeat;
     padding-top: 151px;
     padding-bottom: 145px;
     -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -287,7 +290,7 @@ main {
     position: relative;
     top: -6px; }
   .header__main-wrap--catalog .container {
-    background: url("../img/catalog-background.png") 0 0/1366px 261px no-repeat;
+    background: url("../img/catalog-background.png") 0 0/100% 105% no-repeat;
     padding-top: 70px;
     padding-bottom: 66px; }
   .header__main-wrap--catalog h1 {
@@ -334,9 +337,9 @@ main {
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   .header__main-wrap .container {
-    background: url("../img/main-background@2x.png") 0 0/1366px 471px no-repeat; }
+    background: url("../img/main-background@2x.png") 0 0/100% 105% no-repeat; }
     .header__main-wrap .container--catalog .container {
-      background: url("../img/catalog-background@2x.png") 0 0/1366px 261px no-repeat; } }
+      background: url("../img/catalog-background@2x.png") 0 0/100% 105% no-repeat; } }
 
 @media (min-width: 1024px) and (max-width: 1365px) {
   .header__main-wrap .container {
@@ -679,7 +682,8 @@ main {
   border: none;
   background-color: transparent;
   padding: 0;
-  width: 390px; }
+  width: 390px;
+  color: #ffffff; }
   .footer__wrap input::-webkit-input-placeholder {
     font-weight: 500;
     font-size: 14px;
@@ -2189,10 +2193,10 @@ main {
     padding-top: 40px;
     padding-bottom: 65px; }
   .catalog img {
-    min-width: calc(0.44 * 100vw - 10px);
-    max-width: calc(0.44 * 100vw - 10px);
-    min-height: calc(0.44 * 100vw - 4px);
-    max-height: calc(0.44 * 100vw - 4px); }
+    min-width: calc(0.43 * 100vw - 8px);
+    max-width: calc(0.43 * 100vw - 8px);
+    min-height: calc(0.43 * 100vw - 2px);
+    max-height: calc(0.43 * 100vw - 2px); }
   .catalog::before {
     display: none; }
   .catalog__filter-open {
